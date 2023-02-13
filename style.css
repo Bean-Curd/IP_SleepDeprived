@@ -1,0 +1,171 @@
+
+@font-face{ /*Font for website*/
+    font-family: "HYWenHei-85W";
+    src: url("../Genshin-Impact-Font/zh-cn.ttf")
+}
+
+/*CSS for loginpage*/
+
+.MYloginlogo{ /*Login page logo*/
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.MYlogin{ /*Login page*/
+    background-color: #3e3c46;
+    font-family: "HYWenHei-85W";
+    padding-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MYform{ /*Form section*/
+    background-color: #ffffff;
+    padding: 5vh;
+    border-radius: 10px;
+    
+}
+
+.MYloginbtn{ /*Log in button*/
+    margin-top: 5vh; /* Space the button out */
+    border: none; /*Button format and style*/
+    border-radius: 10px;
+    height: 40px; 
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+}
+
+/*CSS for homepage*/
+
+.MYprofilecont{ /*Profile Icon Container*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.MYprofile{ /*Profile Icon*/
+    position: fixed;
+    margin-top: 3vh;
+    margin-right: 3vh;
+    width: 7vw;
+}
+
+.MYlogocont{ /*Slimepedia logo container*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.MYlogo{ /*Slimepedia Logo*/
+    margin-top: 15vh;
+    position: fixed;
+}
+
+.MYbtncont{ /*Button container*/
+    display: flex; /*Center the buttons*/
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#MYbtn1{ /*The uppermost button*/
+    margin-top: 50vh; /*Shifts the buttons down */
+}
+
+#MYbtn2{ /*The 2nd button*/
+    margin-top: 60vh; /*Shifts the buttons down */
+}
+
+#MYbtn3{ /*The 3rd button*/
+    margin-top: 70vh; /*Shifts the buttons down */
+}
+
+.MYbtn{ /*Buttons*/
+    border: none; /*Button format and style*/
+    border-radius: 20px;
+    min-height: 50px; 
+    min-width: 220px;
+    font-size: 20px;
+    position: fixed;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    font-family: "HYWenHei-85W";
+
+}
+
+.MYbtn:hover{
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+.MYbg{ /*Background Image*/
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed; /*Prevents the BG from being scrolled*/
+    z-index: -1; /*Moves the BG behind the buttons*/
+}
+
+/*Homepage image @media*/
+
+@media (max-width: 1000px) { /*For smaller screen widths*/
+    .MYbg{ /*Background Image*/
+        display: block;
+        width: 1540px;
+        height: 100%;
+        position: fixed; /*Prevents the BG from being scrolled*/
+        z-index: -1; /*Moves the BG behind the buttons*/
+    }
+}
+
+/*Slimepedia Logo in Homepage @media*/
+
+@media (max-width: 600px) { /*For smaller screen widths*/
+    .MYlogo{ /*Slimepedia Logo*/
+        width: 85vw;
+        margin-top: 15vh;
+        position: fixed;
+    }
+}
+
+@media (max-width: 500px) { /*For even smaller screen widths*/
+    .MYlogo{ /*Slimepedia Logo*/
+        width: 85vw;
+        margin-top: 20vh;
+        position: fixed;
+    }
+}
+
+/*Profile Icon @media*/
+
+@media (max-width: 850px) { /*For smaller screen widths*/
+    .MYprofile{ /*Profile Icon*/
+        position: fixed;
+        margin-top: 3vh;
+        margin-right: 3vh;
+        width: 10vw;
+    }
+}
+
+@media (max-width: 600px) { /*For even smaller screen widths*/
+    .MYprofile{ /*Profile Icon*/
+        position: fixed;
+        margin-top: 3vh;
+        margin-right: 3vh;
+        width: 15vw;
+    }
+}
+
+@media (max-width: 400px) { /*For even even smaller screen widths*/
+    .MYprofile{ /*Profile Icon*/
+        position: fixed;
+        margin-top: 2vh;
+        margin-right: 2vh;
+        width: 20vw;
+    }
+}
