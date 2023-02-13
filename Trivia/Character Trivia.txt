@@ -1,5 +1,16 @@
 Character Trivia:
 
+# -> Character
+/ -> Question + Points
+* -> Split Points + Questions
+( -> Inside the Question
+$ -> Inside the Points
+
+P1 -> Answered Correctly for the 1st time
+P2 -> How many times you answered correctly
+
+[{QN,A1,A2,A3,A4},{QN,A1,A2,A3,A4}]
+
 Venti:
 1. What is the Anemo Archon's name? (Barbatos)
 2. What is Venti's signature dish? (A Buoyant Breeze)
