@@ -28,7 +28,7 @@ What is the Geo Archon's name?(Morax(Zhongli(God of Contracts(Rex Lupos
 /What is Zhongli's element?(Geo(Electro(Pyro(Rocko
 /What weapon does Zhongli wield?(Polearm(Spear(Sword(Catalyst
 /What does Zhongli work as?(Funeral Consultant(Storyteller(Chef(Travel Guide
-/What is Zhongli's namecard called?(Planet Befall(Sandstorm(Stillness in Stone(Stone of light
+/What is Zhongli's namecard called?(Planet Befall(Sandstorm(Stillness in Stone(Stone of Light
 /What food does Zhongli dislike the most?(Seafood(Shellfish(Soup(Tofu
 /What is the Geo Archon's vessel name?(Zhongli(Rex Lapis(John Lee(Azhdaha
 /Zhongli is the God of ______(Contracts(Mora(Rock(War
