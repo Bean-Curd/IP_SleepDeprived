@@ -26,20 +26,10 @@ const clicklogin = (event) => { /*The message below the login form*/
 
       let email = $("#account-email").val();
       let password = $("#account-password").val();
-      let ventiqn = $("#account-venti").val();
-      let zhongliqn = $("#account-zhongli").val();
-      let raidenqn = $("#account-raiden").val();
-      let nahidaqn = $("#account-nahida").val();
-      let primonum = $("#account-primo").val();
 
       let jsondata = {
         "Email": email,
         "Password": password,
-        "Ventiqn": ventiqn,
-        "Zhongliqn": zhongliqn,
-        "Raidenqn": raidenqn,
-        "Nahidaqn": nahidaqn,
-        "Primogems": primonum
       };
 
 });
