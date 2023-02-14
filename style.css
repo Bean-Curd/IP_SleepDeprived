@@ -4,7 +4,7 @@
     src: url("../Genshin-Impact-Font/zh-cn.ttf")
 }
 
-/*CSS for loginpage*/
+/*CSS for login*/
 
 .MYloginlogo{ /*Login page logo*/
     width: 80%;
@@ -78,6 +78,13 @@
     font-family: "HYWenHei-85W";
 }
 
+.MYbtna{ /*Homepage Buttons <a>*/
+    min-height: 50px; /*Button <a> format and style*/
+    min-width: 220px;
+    font-size: 20px;
+    position: fixed;
+}
+
 .MYbtncont{ /*Button container*/
     display: flex; /*Center the buttons*/
     align-items: center;
@@ -110,6 +117,31 @@
 
 /*CSS for character_trivia*/
 
+.MYcdcont{ /*Countdown Timer Container*/
+    display: flex; /*Center the box*/
+    align-items: center;
+    flex-direction: column;
+}
+
+.MYcd{ /*Countdown Timer*/
+    font-size: 25px; /*Countdown format and style*/
+    margin-top: 8vh;
+    z-index: 1;
+    border-radius: 20px;
+    height: 50px; 
+    width: 200px;
+    position: fixed;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+    font-family: "HYWenHei-85W";
+    overflow: hidden;
+    text-align: center;
+    display: flex; /*Center the box*/
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .MYbook{ /*Book BG*/
     display: block;
     width: 100%;
@@ -140,7 +172,6 @@
     display: flex; /*Center the box*/
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
 .MYopts{ /*Character Trivia Buttons*/
@@ -183,6 +214,79 @@
 }
 
 .MYopts:hover{
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+.MYhelpcont{ /*The Help Container*/
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 88vh;
+    margin-left: 20vw;
+}
+
+.MYhelp{ /*The help button*/
+    border: none; /*Button format and style*/
+    z-index: 1;
+    border-radius: 20px;
+    min-height: 40px; 
+    min-width: 100px;
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    background-color: #3e3c46;
+    color: #e2dfd6;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    font-family: "HYWenHei-85W";
+    display: flex; /*Center the text*/
+    align-items: center;
+    justify-content: center;
+}
+
+.MYhelpa{ /*Character Trivia Help <a>*/
+    min-height: 40px; /*Button <a> format and style*/
+    min-width: 100px;
+    font-size: 20px;
+    position: fixed;
+}
+
+.MYhelp:hover{
+    color: #3e3c46;
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+/*CSS for ask_help*/
+
+.MYaskhelppage{ /*Ask Help page*/
+    background-color: #3e3c46;
+    font-family: "HYWenHei-85W";
+    padding-top: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MYaskhelp{ /*Ask Help section*/
+    background-color: #ffffff;
+    padding: 5vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.MYaskhelpbtn{ /*Accept help button*/
+    margin-top: 5vh; /* Space the button out */
+    border: none; /*Button format and style*/
+    border-radius: 10px;
+    height: 40px; 
+    width: 40%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+}
+
+.MYaskhelpbtn:hover{
     background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
 }
 
@@ -260,23 +364,31 @@
         font-size: 16px;
     }
     #MYopt1{
-        margin-top: 50vh;
+        margin-top: 45vh;
         margin-right: 0vw;
     }
     #MYopt2{
-        margin-top: 60vh;
+        margin-top: 55vh;
         margin-left: 0vw;
     }
     #MYopt3{
-        margin-top: 70vh;
+        margin-top: 65vh;
         margin-right: 0vw;
     }
     #MYopt4{
-        margin-top: 80vh;
+        margin-top: 75vh;
         margin-left: 0vw;
     }
     .MYqn{
         font-size: 22px;
+    }
+    .MYhelpcont{
+        margin-top: 90vh;
+        margin-left: 50vw;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
