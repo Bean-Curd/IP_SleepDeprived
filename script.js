@@ -16,6 +16,22 @@ const clicklogin = (event) => { /*The message below the login form*/
     }
   };
 
+/*30 Second Countdown for Questions*/
+var seconds = 30; 
+    var cd = document.getElementById("Countdown");
+    
+    var timer = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (seconds == -1) {
+        clearTimeout(timer);
+        doSomething();
+      } else {
+        cd.innerHTML = seconds + " seconds";
+        seconds--;
+      }
+    }
+
 /*Character Questions List*/
 
 var list = `
@@ -63,7 +79,7 @@ What is the Anemo Archon's name?(Barbatos(Barbara(Barbiton(Venti
   #
   Who is the Raiden Shogun?(Ei and the Shogun Puppet(Ei(A Puppet(Scaramouche
   /What is the Raiden Shogun's signature dish?(She cannot cook(Faith Eternal(Fukuushi Udon(Kitsune Ramen
-  /When is Ei's birthday?(June 26th(September 15th(Novemember 7th(March 20th
+  /When is Ei's birthday?(June 26th(September 15th(November 7th(March 20th
   /What is Ei's Geoetic name?(Beelzebul(Beelzelbub(Baal(Ei
   /What is the name of the Raiden Shogun's banner?(Reign of Serenity(Reign of Eternity(The Eternal One Returns(Eternal Royale
   /What is Ei's constellation?(Imperatrix Umbrosa(Zapdos Ursaluna(Tribulatio Demptio(Flabellum
@@ -146,13 +162,10 @@ for (var i = 0; i < 4; i++){ /*Randomize the order of Answers*/
   nums.splice(opt,1); /*Removes the number from nums*/
 }
 
-for (var i = 0; i < 4; i++){ /*To place the nswers*/
+for (var i = 0; i < 4; i++){ /*To place the answers*/
   var optname = "MYopt" + (i + 1)
   document.getElementById(optname).innerHTML=qn[order[i]];
 }
-
-
-
 
 //   $(document).ready(function() { /*For RestDB*/
 //     const APIKEY = "663e531fa478852088da67f67";
