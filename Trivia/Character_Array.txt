@@ -10,12 +10,12 @@ What is the Anemo Archon's name?(Barbatos(Barbara(Barbiton(Venti
 /What is the Anemo Archon's vessel name?(Venti(Barbatos(Dvalin(Liben
 /What is Paimon's nickname for Venti?(Tone-Deaf Bard(Green Hat(Off-Key Drunk(Broke Wine-Sniffer
 /What is Venti's namecard called?(Azure Sky(Wind-Sung Sea(Eagleplume(Virtuoso
-/Venti is the God of ______(Freedom(Wind(Wine(Music
+/Venti is the God of ______?(Freedom(Wind(Wine(Music
 /What was Barbatos's original form?(Wind Spirit(Dandelion Seed(Dragon(Bard
 /Who was Barbatos's competitor for the position of Anemo Archon?(Andrius(Dvalin(Vanessa(Razor
 /How many versions does Venti's Elemental Skill have?(Two(One(It's not called Elemental Skill(Three
 /What is Venti's favourite food?(Apples(Wine(Sunsettia(Dandelions
-/What is Venti's current ouccupation?(Bard(Traveler(Poet(Priest
+/What is Venti's current occupation?(Bard(Traveler(Poet(Priest
 /What is the name of the lyre that Venti wields?(Der Fruhling(Windsong Lyre(Holy Lyre de Himmel(Holy Lyram de Himbel
 /How many times did La Signora hit Venti?(3(2(5(8
 #
