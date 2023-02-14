@@ -1,10 +1,8 @@
 Character Trivia:
 
 # -> Character
-/ -> Question + Points
-* -> Split Points + Questions
+/ -> Question
 ( -> Inside the Question
-$ -> Inside the Points
 
 P1 -> Answered Correctly for the 1st time
 P2 -> How many times you answered correctly
