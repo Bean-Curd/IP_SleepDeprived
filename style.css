@@ -66,6 +66,19 @@
     position: fixed;
 }
 
+.MYbtn{ /*Homepage Buttons*/
+    border: none; /*Button format and style*/
+    border-radius: 20px;
+    min-height: 50px; 
+    min-width: 220px;
+    font-size: 20px;
+    position: fixed;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    font-family: "HYWenHei-85W";
+}
+
 .MYbtncont{ /*Button container*/
     display: flex; /*Center the buttons*/
     align-items: center;
@@ -85,20 +98,6 @@
     margin-top: 70vh; /*Shifts the buttons down */
 }
 
-.MYbtn{ /*Buttons*/
-    border: none; /*Button format and style*/
-    border-radius: 20px;
-    min-height: 50px; 
-    min-width: 220px;
-    font-size: 20px;
-    position: fixed;
-    color: #3e3c46;
-    background-color: #e2dfd6;
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
-    font-family: "HYWenHei-85W";
-
-}
-
 .MYbtn:hover{
     background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
 }
@@ -110,6 +109,151 @@
     position: fixed; /*Prevents the BG from being scrolled*/
     z-index: -1; /*Moves the BG behind the buttons*/
 }
+
+/*CSS for character_trivia*/
+
+.MYbook{ /*Book BG*/
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed; /*Prevents the BG from being scrolled*/
+    z-index: -1; /*Moves the BG behind the buttons*/
+}
+
+.MYqncont{ /*Question Box Container*/
+    display: flex; /*Center the box*/
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.MYqn{ /*Question box*/
+    border: none; /*Question Box format and style*/
+    border-radius: 20px;
+    min-height: 25vh; 
+    min-width: 70vw;
+    font-size: 35px;
+    margin-top: 15vh;
+    position: fixed;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+    font-family: "HYWenHei-85W";
+}
+
+.MYopts{ /*Character Trivia Buttons*/
+    border: none; /*Button format and style*/
+    border-radius: 20px;
+    min-height: 80px; 
+    min-width: 300px;
+    font-size: 20px;
+    position: fixed;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    font-family: "HYWenHei-85W";
+}
+
+.MYoptcont{ /*Options Container*/
+    display: flex; /*Center the buttons*/
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#MYopt1{ /*The 1st Option*/
+    margin-top: 50vh; /*Shifts the buttons down and left */
+    margin-right: 30vw; 
+}
+
+#MYopt2{ /*The 2nd Option*/
+    margin-top: 50vh; /*Shifts the buttons down and right */
+    margin-left: 30vw; 
+}
+
+#MYopt3{ /*The 3rd Option*/
+    margin-top: 68vh; /*Shifts the buttons down and left */
+    margin-right: 30vw; 
+}
+
+#MYopt4{ /*The 4th Option*/
+    margin-top: 68vh; /*Shifts the buttons down and right */
+    margin-left: 30vw; 
+}
+
+.MYopts:hover{
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+/*Character Trivia @media*/
+@media (max-width: 1050px) { /*For smaller screen widths*/
+    .MYopts{ /*For Options*/
+        border-radius: 20px;
+        min-height: 80px; 
+        min-width: 250px;
+        font-size: 18px;
+    }
+    .MYqn{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 850px) { /*For even smaller screen widths*/
+    .MYopts{ /*For Options*/
+        border-radius: 20px;
+        min-height: 80px; 
+        min-width: 220px;
+        font-size: 18px;
+    }
+    #MYopt1{
+        margin-right: 35vw;
+    }
+    #MYopt2{
+        margin-left: 35vw;
+    }
+    #MYopt3{
+        margin-right: 35vw;
+    }
+    #MYopt4{
+        margin-left: 35vw;
+    }
+}
+
+@media (max-width: 650px) { /*For even even smaller screen widths*/
+    .MYbook{ /*Book BG*/
+        display: block;
+        object-position: -15vw;
+        width: 220%;
+        height: 100%;
+        position: fixed; /*Prevents the BG from being scrolled*/
+        z-index: -1; /*Moves the BG behind the buttons*/
+    }
+    .MYopts{ /*For Options*/
+        border-radius: 20px;
+        min-height: 50px; 
+        min-width: 300px;
+        font-size: 16px;
+    }
+    #MYopt1{
+        margin-top: 50vh;
+        margin-right: 0vw;
+    }
+    #MYopt2{
+        margin-top: 60vh;
+        margin-left: 0vw;
+    }
+    #MYopt3{
+        margin-top: 70vh;
+        margin-right: 0vw;
+    }
+    #MYopt4{
+        margin-top: 80vh;
+        margin-left: 0vw;
+    }
+    .MYqn{
+        font-size: 25px;
+    }
+}
+
 
 /*Homepage image @media*/
 
