@@ -57,7 +57,6 @@
 .MYlogocont{ /*Slimepedia logo container*/
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -82,7 +81,6 @@
 .MYbtncont{ /*Button container*/
     display: flex; /*Center the buttons*/
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -123,7 +121,6 @@
 .MYqncont{ /*Question Box Container*/
     display: flex; /*Center the box*/
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -138,6 +135,10 @@
     color: #3e3c46;
     background-color: #e2dfd6;
     font-family: "HYWenHei-85W";
+    display: flex; /*Center the box*/
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .MYopts{ /*Character Trivia Buttons*/
@@ -156,7 +157,6 @@
 .MYoptcont{ /*Options Container*/
     display: flex; /*Center the buttons*/
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
