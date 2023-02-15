@@ -1,3 +1,5 @@
+const APIKEY = "63e531fa478852088da67f67";
+
 /*30 Second Countdown for Questions*/
 var seconds = 30;
 var cd = document.getElementById("Countdown");
@@ -112,6 +114,7 @@ What is the Anemo Archon's name?(Barbatos(Barbara(Barbiton(Venti
 //     console.log("Ohno")
 // }
 
+var username = localStorage.getItem("username");
 var chara = list.split("#"); /*Split the Character Array*/
 
 var vqns = chara[0].split("/"); /*Split by Questions*/
@@ -119,7 +122,7 @@ var zqns = chara[1].split("/");
 var rqns = chara[2].split("/");
 var nqns = chara[3].split("/");
 
-var storagename = "";
+var storagename = username;
 
 const chara_array = [vqns, zqns, rqns, nqns]; /*Array for different characters*/
 
@@ -182,14 +185,17 @@ document.getElementById("MYopt" + correct).onclick = () => {
     /*If the question saved is 0,0 -> has not been answered correctly before, change to 1,1*/
     localStorage.setItem(storagename, [1, 1]);
   } else {
+    var storearray = localStorage
+      .getItem(storagename)
+      .split(","); /*So the comma does not affect the position*/
     var counter = parseInt(
-      localStorage.getItem(storagename)[2]
+      storearray[1]
     ); /*If the question has been answered correctly before -> increase the 2nd one by 1 */ /*parseInt -> make sure it is an integer*/
     localStorage.setItem(storagename, [1, counter + 1]);
   }
 };
 
-// localStorage.clear(); /*To clear the questions for testing*/
+//localStorage.clear(); /*To clear the questions for testing*/
 
 // Filler
 // Filler
@@ -197,55 +203,68 @@ document.getElementById("MYopt" + correct).onclick = () => {
 // Filler
 // Filler
 
-$(document).ready(function () {
-  /*For RestDB*/ const APIKEY = "63e531fa478852088da67f67";
+// /*5 questions a day limit*/
+// $(document).ready(function () {
+//   document.getElementById("MYbtn1").onclick = () => {
+//     let gettime = {
+//       async: true,
+//       crossDomain: true,
+//       url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+//       method: "GET",
+//       headers: {
+//         "content-type": "application/json",
+//         "x-apikey": APIKEY,
+//         "cache-control": "no-cache",
+//       },
+//     };
 
-  let gettime = {
-    async: true,
-    crossDomain: true,
-    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      "x-apikey": APIKEY,
-      "cache-control": "no-cache",
-    },
-  };
+//     $.ajax(gettime).done(function (response) {
+//       for (var i = 0; i < response.length; i++) {
+//         console.log(response[i]);
+//       }
+//     });
+//   };
 
-  $.ajax(gettime).done(function (response) {
-    for (var i = 0; i < response.length; i++) {
-      console.log(response[i]);
-    }
-  });
+// let gettime = {
+//   async: true,
+//   crossDomain: true,
+//   url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+//   method: "GET",
+//   headers: {
+//     "content-type": "application/json",
+//     "x-apikey": APIKEY,
+//     "cache-control": "no-cache",
+//   },
+// };
 
-  document.getElementsByClassName("MYopts").onclick = () => {
-    if (localStorage.getItem(storagename)[0] == 0) {
-      localStorage.setItem(storagename, [1, 1]);
-    }
-    var firsttry = new Date().toDateString();
-  };
+// $.ajax(gettime).done(function (response) {
+//   for (var i = 0; i < response.length; i++) {
+//     console.log(response[i]);
+//   }
+// });
 
-  var lasttry = new Date();
+// var firsttry = new Date().toDateString();
+// var lasttry = new Date();
 
-  //   var jsondata = { field1: "new value", field2: "xxx" };
-  //   var puttime = {
-  //     async: true,
-  //     crossDomain: true,
-  //     url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[0]}`,
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //       "x-apikey": APIKEY,
-  //       "cache-control": "no-cache",
-  //     },
-  //     processData: false,
-  //     data: JSON.stringify(jsondata),
-  //   };
+//   var jsondata = { field1: "new value", field2: "xxx" };
+//   var puttime = {
+//     async: true,
+//     crossDomain: true,
+//     url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[0]}`,
+//     method: "PUT",
+//     headers: {
+//       "content-type": "application/json",
+//       "x-apikey": APIKEY,
+//       "cache-control": "no-cache",
+//     },
+//     processData: false,
+//     data: JSON.stringify(jsondata),
+//   };
 
-  //   $.ajax(puttime).done(function (res) {
-  //     response = res;
-  //     for (var i = 0; i < res.length; i++) {
-  //       console.log(res[i]);
-  //     }
-  //   });
-});
+//   $.ajax(puttime).done(function (res) {
+//     response = res;
+//     for (var i = 0; i < res.length; i++) {
+//       console.log(res[i]);
+//     }
+//   });
+// });
