@@ -28,7 +28,20 @@ const clicklogin = (event) => {
       }
     }
     if (check) {
-      window.location.href = "http://127.0.0.1:5500/homepage.html";
+      /*Plays the Lottie Animation*/
+      $("#MYanimation").html(`<lottie-player
+        src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json"
+        background="transparent"
+        speed="1.5"
+        style="width: 600px; height: 600px"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>`);
+      setTimeout(myURL, 3000);
+      function myURL() {
+        window.location.href = "http://127.0.0.1:5500/homepage.html";
+      }
     } else {
       $("#msg") /*If the information is wrong*/
         .html(`<div class="container p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">

@@ -6,6 +6,18 @@
 
 /*CSS for login*/
 
+.animation-center{ /*Lottie animation*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#MYanimation {
+    background-color: #3e3c46;
+    position: fixed;
+    margin-top: 70vh;
+}
+
 .MYloginlogo{ /*Login page logo*/
     width: 80%;
     margin-left: 10%;
