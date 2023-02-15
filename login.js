@@ -19,19 +19,26 @@ const clicklogin = (event) => {
   };
 
   $.ajax(getaccount).done(function (response) {
+    var check = false;
     for (var i = 0; i < response.length; i++) {
       if (response[i].email == username && response[i].password == password) {
         /*If the information is correct*/
-        window.location.href = "http://127.0.0.1:5500/homepage.html";
-      } else if (
-        response[i].email !== username &&
-        response[i].password !== password
-      ) {
-        $("#msg") /*If the information is wrong*/
-          .html(`<div class="container p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
-                            **Invalid email or password, please try again.
-                            </div>`);
+        check = true;
+        break;
       }
     }
+    if (check) {
+      window.location.href = "http://127.0.0.1:5500/homepage.html";
+    } else {
+      $("#msg") /*If the information is wrong*/
+        .html(`<div class="container p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
+                          **Invalid email or password, please try again.
+                          </div>`);
+    }
   });
+
+  localStorage.setItem(
+    "username",
+    username
+  ); /*To call username in script.js so the Question local storage is user specific*/
 };
