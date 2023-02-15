@@ -30,6 +30,7 @@ Future Features:
 - The help option would give the question to another player who logged in
 - If a question the user requested for help for is answered correctly, the user would be given the rewards the next day
 - More Characters would be added for more content
+- Implement the convert 160 Primogems for new character information in the shop
 
 <h2>Technologies Used</h2>
 
