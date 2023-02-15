@@ -1,36 +1,17 @@
-
-const clicklogin = (event) => { /*The message below the login form*/
-    event.preventDefault(); /*Prevent page from refreshing after text is entered*/
-
-    var username = $("#username").val();
-    var password = $("#pwd").val();
-
-    if (username == "Test1@gmail.com" && password == "Test1") {
-      /*If the information is correct*/
-        window.location.href = "http://127.0.0.1:5500/homepage.html";
-    } else {
-      $("#msg") /*If the information is wrong*/
-        .html(`<div class="container p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
-                      **Invalid email or password, please try again.
-                      </div>`);
-    }
-  };
-
 /*30 Second Countdown for Questions*/
-var seconds = 30; 
-    var cd = document.getElementById("Countdown");
-    
-    var timer = setInterval(countdown, 1000);
-    
-    function countdown() {
-      if (seconds == -1) {
-        clearTimeout(timer);
-        doSomething();
-      } else {
-        cd.innerHTML = seconds + " seconds";
-        seconds--;
-      }
-    }
+var seconds = 30;
+var cd = document.getElementById("Countdown");
+
+var timer = setInterval(countdown, 1000);
+
+function countdown() {
+  if (seconds == -1) {
+    clearTimeout(timer);
+  } else {
+    cd.innerHTML = seconds + " seconds";
+    seconds--;
+  }
+}
 
 /*Character Questions List*/
 
@@ -118,7 +99,7 @@ What is the Anemo Archon's name?(Barbatos(Barbara(Barbiton(Venti
   /Where was Nahida held captive at?(Sanctuary of Surasthana(Mausoleum of King Deshret(Ruins of Dahri(Fane of Ashvattha
   /Which Archon's elemental burst has the biggest radius?(Nahida(Zhongli(Ei(Venti
   /How many lines are in Nahida's constellation art?(Approx. 50(Approx. 70(Approx. 15(Approx. 20
-`
+`;
 /*Tried to read the file -> Require not defined error*/
 
 // const fs = require('fs'); /*To read the Character_Array file*/
@@ -138,47 +119,133 @@ var zqns = chara[1].split("/");
 var rqns = chara[2].split("/");
 var nqns = chara[3].split("/");
 
-const chara_array = [vqns, zqns, rqns, nqns] /*Array for different characters*/
+var storagename = "";
+
+const chara_array = [vqns, zqns, rqns, nqns]; /*Array for different characters*/
+
 var charanum = Math.floor(Math.random() * 4); /*Random character*/
+storagename += charanum;
 
 var qnnum = Math.floor(Math.random() * 20); /*Random question number*/
+storagename += qnnum;
+
 var qn;
 
-for(var i = 0; i < chara_array[charanum].length; i++){ /*Calls the randomized question*/
-    
-  if(i == qnnum){
-      qn = chara_array[charanum][i].split("(") /*Splits the question into its questions and answers */
+for (var i = 0; i < chara_array[charanum].length; i++) {
+  /*Calls the randomized question*/
+
+  if (i == qnnum) {
+    qn =
+      chara_array[charanum][i].split(
+        "("
+      ); /*Splits the question into its questions and answers */
   }
 }
 
-document.getElementById("Question").innerHTML=qn[0]; /*Puts the Question in the Question Box*/
+document.getElementById("Question").innerHTML =
+  qn[0]; /*Puts the Question in the Question Box*/
 
-const nums = [1,2,3,4]
-const order = []
+const nums = [1, 2, 3, 4];
+const order = [];
 
-for (var i = 0; i < 4; i++){ /*Randomize the order of Answers*/
-  var opt = Math.floor(Math.random() * (nums.length)); /*Random Answer Location*/
+for (var i = 0; i < 4; i++) {
+  /*Randomize the order of Answers*/
+  var opt = Math.floor(Math.random() * nums.length); /*Random Answer Location*/
   order.push(nums[opt]); /*Adds the number from nums into order*/
-  nums.splice(opt,1); /*Removes the number from nums*/
+  nums.splice(opt, 1); /*Removes the number from nums*/
 }
 
-for (var i = 0; i < 4; i++){ /*To place the answers*/
-  var optname = "MYopt" + (i + 1)
-  document.getElementById(optname).innerHTML=qn[order[i]];
+for (var i = 0; i < 4; i++) {
+  /*To place the answers*/
+  var optname = "MYopt" + (i + 1);
+  document.getElementById(optname).innerHTML = qn[order[i]];
 }
 
-//   $(document).ready(function() { /*For RestDB*/
-//     const APIKEY = "663e531fa478852088da67f67";
-//     getContacts();
-//     $("#update-contact-container").hide();
-//     $("#add-update-msg").hide();
+if (localStorage.getItem(storagename) == null) {
+  /*If the Question has not been saved in local storage, create one with 0,0*/
+  localStorage.setItem(
+    storagename,
+    [0, 0]
+  ); /*1st 0 is for 1st correct try, 2nd 0 is a counter for number of correct try*/
+}
 
-//       let email = $("#account-email").val();
-//       let password = $("#account-password").val();
+var correct;
+for (var i = 1; i <= 4; i++) {
+  /*If the answer is the same as the correct answer in the List*/
+  if (document.getElementById("MYopt" + i).innerHTML == qn[1]) {
+    correct = i; /*Let correct be the correct position number*/
+  }
+}
+document.getElementById("MYopt" + correct).onclick = () => {
+  /*When the correct option is clicked*/ /*Arrow function shortcut for function(){}*/
+  if (localStorage.getItem(storagename)[0] == 0) {
+    /*If the question saved is 0,0 -> has not been answered correctly before, change to 1,1*/
+    localStorage.setItem(storagename, [1, 1]);
+  } else {
+    var counter = parseInt(
+      localStorage.getItem(storagename)[2]
+    ); /*If the question has been answered correctly before -> increase the 2nd one by 1 */ /*parseInt -> make sure it is an integer*/
+    localStorage.setItem(storagename, [1, counter + 1]);
+  }
+};
 
-//       let jsondata = {
-//         "Email": email,
-//         "Password": password,
-//       };
+// localStorage.clear(); /*To clear the questions for testing*/
 
-// });
+// Filler
+// Filler
+// Filler
+// Filler
+// Filler
+
+$(document).ready(function () {
+  /*For RestDB*/ const APIKEY = "63e531fa478852088da67f67";
+
+  let gettime = {
+    async: true,
+    crossDomain: true,
+    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": APIKEY,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(gettime).done(function (response) {
+    for (var i = 0; i < response.length; i++) {
+      console.log(response[i]);
+    }
+  });
+
+  document.getElementsByClassName("MYopts").onclick = () => {
+    if (localStorage.getItem(storagename)[0] == 0) {
+      localStorage.setItem(storagename, [1, 1]);
+    }
+    var firsttry = new Date().toDateString();
+  };
+
+  var lasttry = new Date();
+
+  //   var jsondata = { field1: "new value", field2: "xxx" };
+  //   var puttime = {
+  //     async: true,
+  //     crossDomain: true,
+  //     url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[0]}`,
+  //     method: "PUT",
+  //     headers: {
+  //       "content-type": "application/json",
+  //       "x-apikey": APIKEY,
+  //       "cache-control": "no-cache",
+  //     },
+  //     processData: false,
+  //     data: JSON.stringify(jsondata),
+  //   };
+
+  //   $.ajax(puttime).done(function (res) {
+  //     response = res;
+  //     for (var i = 0; i < res.length; i++) {
+  //       console.log(res[i]);
+  //     }
+  //   });
+});
