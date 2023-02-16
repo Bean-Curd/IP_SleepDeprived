@@ -52,6 +52,81 @@
     background-color: #e2dfd6;
 }
 
+/*CSS for profile*/
+
+.MYprofilepage{ /*Profile page*/
+    background-color: #3e3c46;
+    font-family: "HYWenHei-85W";
+    padding-top: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MYback{ /*Back arrow*/
+    margin-top: -30vh;
+    margin-left: -46vw;
+    width: 4.5vw;
+    height: 10vh;
+}
+
+.MYprimocount{ /*Primogems counter*/
+    margin-top: -20vh;
+    margin-right: -90vw;
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MYshopprimo{ /*Primogem image*/  
+    width: 80px;  
+}
+
+.MYprimos{ /*Primogem Number*/
+    margin-top: 1vh;
+    font-size: 20px;
+    color: #e2dfd6;
+}
+
+.MYshopcont{ /*Shop Container*/
+    text-align: center;
+}
+
+.MYshop{ /*Conversion option*/
+    font-size: 30px;
+    margin-top: 5vh; /* Space the button out */
+    border: none; /*Button format and style*/
+    border-radius: 10px;
+    height: 20vh; 
+    width: 60vw;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+}
+
+.MYsignout{ /*Accept help button*/
+    font-size: 25px;
+    margin-top: 14vh; /* Space the button out */
+    border: none; /*Button format and style*/
+    border-radius: 10px;
+    height: 10vh; 
+    width: 20vw;
+    color: #3e3c46;
+    background-color: #ff7d7d;
+}
+
+.MYshop:hover{
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+.MYsignout:hover{
+    color: #e2dfd6;
+    background-color: #a64848; /*Changes the color of the button when hovered over*/
+}
+
 /*CSS for homepage*/
 
 .MYprofilecont{ /*Profile Icon Container*/
@@ -59,8 +134,13 @@
     justify-content: flex-end;
 }
 
-.MYprofile{ /*Profile Icon*/
+.MYprofilelink{ /*Profile Icon <a>*/
+    margin-top: -3vh;
+    margin-right: -3vh;
     position: fixed;
+}
+
+.MYprofile{ /*Profile Icon*/
     margin-top: 3vh;
     margin-right: 3vh;
     width: 7vw;
@@ -302,6 +382,54 @@
     background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
 }
 
+/*Profile page*/
+@media (max-width: 1000px) { /*For smaller screen widths*/
+    .MYback{ /*Back arrow*/
+        margin-left: -44vw;
+        width: 6vw;
+        height: 10vh;
+    }
+    .MYprimocount{ /*Primogems counter*/
+        margin-top: -20vh;
+        margin-right: -80vw;
+    }
+    .MYshop{ /*Conversion option*/
+        font-size: 27px;
+    }
+    .MYsignout{ /*Sign out button*/
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 650px) { /*For even smaller screen widths*/
+    .MYback{ /*Back arrow*/
+        margin-top: -35vh;
+        margin-left: -44vw;
+        width: 10vw;
+        height: 8vh;
+    }
+    .MYprimocount{ /*Primogems counter*/
+        margin-top: -20vh;
+        margin-right: -75vw;
+    }
+    .MYshopprimo{ /*Primogem image*/  
+        width: 70px;  
+    }
+    .MYprimos{ /*Primogem Number*/
+        margin-top: 1vh;
+        font-size: 18px;
+        color: #e2dfd6;
+    }
+    .MYshop{ /*Conversion option*/
+        width: 78vw;
+        font-size: 25px;
+    }
+    .MYsignout{ /*Sign out button*/
+        width: 40vw;
+        font-size: 22px;
+    }
+}
+
 /*Character Trivia @media*/
 @media (max-width: 1500px) { /*For smaller screen widths*/
     .MYopts{ /*For Options*/
@@ -413,7 +541,7 @@
     }
 }
 
-/*Homepage image @media*/
+/*Homepage @media*/
 
 @media (max-width: 1000px) { /*For smaller screen widths*/
     .MYbg{ /*Background Image*/
@@ -425,17 +553,24 @@
     }
 }
 
-/*Slimepedia Logo in Homepage @media*/
+@media (max-width: 850px) { /*For even smaller screen widths*/
+    .MYprofile{ /*Profile Icon*/
+        width: 10vw;
+    }
+}
 
-@media (max-width: 600px) { /*For smaller screen widths*/
+@media (max-width: 600px) { /*For even even smaller screen widths*/
     .MYlogo{ /*Slimepedia Logo*/
         width: 85vw;
         margin-top: 15vh;
         position: fixed;
     }
+    .MYprofile{ /*Profile Icon*/
+        width: 15vw;
+    }
 }
 
-@media (max-width: 500px) { /*For even smaller screen widths*/
+@media (max-width: 500px) { /*For even even even smaller screen widths*/
     .MYlogo{ /*Slimepedia Logo*/
         width: 85vw;
         margin-top: 20vh;
@@ -443,31 +578,8 @@
     }
 }
 
-/*Profile Icon @media*/
-
-@media (max-width: 850px) { /*For smaller screen widths*/
+@media (max-width: 400px) { /*For even even even even smaller screen widths*/
     .MYprofile{ /*Profile Icon*/
-        position: fixed;
-        margin-top: 3vh;
-        margin-right: 3vh;
-        width: 10vw;
-    }
-}
-
-@media (max-width: 600px) { /*For even smaller screen widths*/
-    .MYprofile{ /*Profile Icon*/
-        position: fixed;
-        margin-top: 3vh;
-        margin-right: 3vh;
-        width: 15vw;
-    }
-}
-
-@media (max-width: 400px) { /*For even even smaller screen widths*/
-    .MYprofile{ /*Profile Icon*/
-        position: fixed;
-        margin-top: 2vh;
-        margin-right: 2vh;
         width: 20vw;
     }
 }
