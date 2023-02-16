@@ -1,4 +1,5 @@
-const APIKEY = "63e531fa478852088da67f67";
+// const APIKEY = "63e531fa478852088da67f67";
+const APIKEY = "63ee3468478852088da68361"; //The demo one
 
 /*30 Second Countdown for Questions*/
 var seconds = 30;
@@ -215,7 +216,8 @@ function checkbuttonid(id) {
     let gettime = {
       async: true,
       crossDomain: true,
-      url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+      // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+      url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -229,8 +231,8 @@ function checkbuttonid(id) {
         /*Looks for the user's account*/
         if (response[i].email == username) {
           usernum = i; /*Gets the user's account position*/
-          if (4 > response[i].numtrydone >= 0) {
-            /*If the user has done/started the Character Trivia today, update try5date, compare try1date and try5date*/
+          if (response[i].numtrydone == 4) {
+            /*If it is the last try, bring back to homepage and deny entry*/
             var updatelasttry = new Date();
             var tries = response[i].numtrydone;
             tries += 1;
@@ -238,14 +240,15 @@ function checkbuttonid(id) {
             var jsondata = {
               email: username,
               password: response[i].password,
-              try5date: updatelasttry,
+              tryagain: updatelasttry,
               numtrydone: tries,
             };
 
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -258,7 +261,36 @@ function checkbuttonid(id) {
 
             $.ajax(puttime).done(function (response) {
               console.log(response);
-              window.location.reload(true);
+              alert("You have completed all your tries for today!");
+              window.location.href = "http://127.0.0.1:5500/homepage.html";
+            });
+          }
+          if (4 > response[i].numtrydone >= 0) {
+            /*If the user has done/started the Character Trivia today, update try5date, compare try1date and try5date*/
+
+            var jsondata = {
+              email: username,
+              password: response[i].password,
+              try5date: updatelasttry,
+            };
+
+            var puttime = {
+              async: true,
+              crossDomain: true,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache",
+              },
+              processData: false,
+              data: JSON.stringify(jsondata),
+            };
+
+            $.ajax(puttime).done(function (response) {
+              console.log(response);
             });
 
             if (
@@ -278,7 +310,8 @@ function checkbuttonid(id) {
               var puttime = {
                 async: true,
                 crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
                 method: "PUT",
                 headers: {
                   "content-type": "application/json",
@@ -311,7 +344,8 @@ function checkbuttonid(id) {
               var puttime = {
                 async: true,
                 crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
                 method: "PUT",
                 headers: {
                   "content-type": "application/json",
@@ -325,40 +359,6 @@ function checkbuttonid(id) {
               $.ajax(puttime).done(function (response) {
                 console.log(response);
                 window.location.reload(true);
-              });
-            }
-
-            if (response[i].numtrydone == 4) {
-              /*If it is the last try, bring back to homepage and deny entry*/
-              var tries = response[i].numtrydone;
-              var updatetryagain = updatelasttry;
-              tries += 1;
-
-              var jsondata = {
-                email: username,
-                password: response[i].password,
-                tryagain: updatetryagain,
-                numtrydone: tries,
-              };
-
-              var puttime = {
-                async: true,
-                crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
-                method: "PUT",
-                headers: {
-                  "content-type": "application/json",
-                  "x-apikey": APIKEY,
-                  "cache-control": "no-cache",
-                },
-                processData: false,
-                data: JSON.stringify(jsondata),
-              };
-
-              $.ajax(puttime).done(function (response) {
-                console.log(response);
-                alert("You have completed all your tries for today!");
-                window.location.href = "http://127.0.0.1:5500/homepage.html";
               });
             }
           }

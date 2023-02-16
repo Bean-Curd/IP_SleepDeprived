@@ -1,4 +1,5 @@
-const APIKEY = "63e531fa478852088da67f67";
+// const APIKEY = "63e531fa478852088da67f67";
+const APIKEY = "63ee3468478852088da68361"; //The demo one
 const clicklogin = (event) => {
   /*The message below the login form*/
   event.preventDefault(); /*Prevent page from refreshing after text is entered*/
@@ -9,7 +10,8 @@ const clicklogin = (event) => {
   let getaccount = {
     async: true,
     crossDomain: true,
-    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
     method: "GET",
     headers: {
       "content-type": "application/json",

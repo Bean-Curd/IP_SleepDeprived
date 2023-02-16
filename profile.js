@@ -22,7 +22,7 @@ const clickconvert = (event) => {
       userprimo,
       primonum
     ); /*To call Primogem Number in script.js*/
-    alert("A 100 Primogems have been converted to 50 Primogems!");
+    alert("A 100 Primogems have been converted to 50 in game Primogems!");
   } else {
     alert("You do not have enough Primogems!");
   }

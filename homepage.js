@@ -1,5 +1,6 @@
 /*5 questions a day limit*/
-const APIKEY = "63e531fa478852088da67f67";
+// const APIKEY = "63e531fa478852088da67f67";
+const APIKEY = "63ee3468478852088da68361"; //The demo one
 var username = localStorage.getItem("username");
 
 var usernum;
@@ -7,7 +8,8 @@ document.getElementById("MYbtn1").onclick = () => {
   let gettime = {
     async: true,
     crossDomain: true,
-    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -35,7 +37,8 @@ document.getElementById("MYbtn1").onclick = () => {
           var puttime = {
             async: true,
             crossDomain: true,
-            url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+            // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+            url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -48,12 +51,9 @@ document.getElementById("MYbtn1").onclick = () => {
 
           $.ajax(puttime).done(function (response) {
             console.log(response);
+            window.location.href =
+              "http://127.0.0.1:5500/character_trivia.html";
           });
-
-          window.location.href = "http://127.0.0.1:5500/character_trivia.html";
-        } else if (0 < response[i].numtrydone < 5) {
-          /*If user has not used all their tries, let them in*/
-          window.location.href = "http://127.0.0.1:5500/character_trivia.html";
         } else if (response[i].numtrydone == 5) {
           /*If user has used all 5 tries*/
           var taptryagain =
@@ -80,10 +80,12 @@ document.getElementById("MYbtn1").onclick = () => {
               tryagain: try1,
               numtrydone: 0,
             };
+
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -96,11 +98,13 @@ document.getElementById("MYbtn1").onclick = () => {
 
             $.ajax(puttime).done(function (response) {
               console.log(response);
+              window.location.href =
+                "http://127.0.0.1:5500/character_trivia.html";
             });
-
-            window.location.href =
-              "http://127.0.0.1:5500/character_trivia.html";
           }
+        } else if (0 < response[i].numtrydone <= 4) {
+          /*If user has not used all their tries, let them in*/
+          window.location.href = "http://127.0.0.1:5500/character_trivia.html";
         }
       }
     }
