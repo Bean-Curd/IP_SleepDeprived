@@ -19,8 +19,8 @@ The Slimepedia website would consist of:
 
 1. A login page for users to sign in using their Genshin accounts
 2. A homepage for users to access the Character Trivia, Genshin Trivia and Slimepedia pages
-3. A profile button for users to <strong>access the shop</strong> and sign out
-4. <strong>A shop section for users to see their Primogems and convert them over to their Genshin Accounts</strong>
+3. A profile button for users to access the shop and sign out
+4. A shop section for users to see their Primogems and convert them over to their Genshin Accounts
 5. A Character Trivia page to display Character Questions and buttons with their answers, a 30 second countdown timer for the questions and a help button for users to give the question they are struggling with to another user
 6. A Genshin Trivia page to display general Genshin Questions and buttons wth their answers, a 30 second countdown timer for the question and display of the user's unlocked character <strong>(If a favourite character has not been selected, a random character is chosen)</strong>
 7. A Slimepedia page for the user to see the image of the character, information unlocked of the character and the 3D model of the character
@@ -29,6 +29,7 @@ Future Features:
 
 - The help option would give the question to another player who logged in
 - If a question the user requested for help for is answered correctly, the user would be given the rewards the next day
+- Gives the user Character Materials for the 1st, 10th and 20th questions of each character answered
 - More Characters would be added for more content
 - Implement the convert 160 Primogems for new character information in the shop
 
