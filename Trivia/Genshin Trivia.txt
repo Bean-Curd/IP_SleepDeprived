@@ -1,114 +1,100 @@
-Genshin Trivia:
-
-Character-related:
-1. What is the relationship between Shenhe and Chongyun? (Aunt and Nephew)
-2. Who is Alhaitham's roommate? (Kaveh)
-3. What is Mona's full name? (Astrologist Mona Megistus)
-4. How does Oz address Fischl? (Mein Fraulein)
-5. What was the first name given to Wanderer? (Kabukimono)
-6. When did Kaeya recieve his Vision? (Oh the night of Crepus's death)
-7. Which weapon is supposedly related to Razor? (Wolf's Gravestone)
-8. What is the name of Klee's mother? (Alice)
-9. Which character is from Khaenri'ah? (Kaeya)
-10. Who is in Benny's Adventure Team? (Only Bennett)
-11. What does Sucrose have a collection of in her room? (Bones)
-12. Who is the author of the novel 'A Legend of Sword'? (Xingqiu)
-13. Who is collaborating with Xingqiu to publish a book? (Albedo)
-14. Where did Tartaglia get his powers from? (The Abyss)
-15. Who is Tartaglia's 'master'? (Skirk)
-16. Which character shares the same birthday as Genshin's anniversary? (Ayaka)
-17. What does Ayato pull out of his sleeve during his idle? (Bubble tea)
-18. Who is the Acting Grand Master of the Knights of Favonius? (Jean)
-19. Which aristocratic family does Eula belong to? (Lawrence)
-20. Which character does the constellation 'Serval' belong to? (Collei)
-21. Which of the following is the name of Beidou's C6? (Bane of Evil)
-22. Who says the following line:
-'Hm? What did you say? I'm old now, so every other phrase escapes my ears.
-Try calling me "Madam ________," and I'll see if I can pick that up.' ? (Faruzan)
-23. What does Ganyu love snacking on? (Qingxin)
-24. Who does Keqing secretly look up to? (Rex Lapis)
-25. Who is the General Mahamatra? (Cyno)
-26. Why does Layla always appear drowsy? (She sleepwalks)
-27. What was Tighnari's reason for wanting a Dendro Vision?
-(To make a vine ladder to reach high-hanging fruit)
-28. Who is the founder of the Yae Publishing House? (Yae Miko)
-29. Who is Xiangling's mentor? (Madame Ping)
-30. Which of the following characters have the highest flat attack stat? (Xiao)
-31. Which claymore character does not wield their weapon while dealing normal attacks? (Dori)
-32. Which character does the soundtrack 'Time to Shine' belong to? (Arataki Itto)
-33. Who is the featured 5 star in the banner 'Adrift in the Harbor'? (Ganyu)
-
-Lore-related:
-1. When did Khaenri'ah fall? (500 years ago)
-2. What is the Cataclysm? (The Fall of Khaenri'ah)
-3. How many Yakshas were considered the foremost Yakshas? (5)
-4. Who is ranked first among the Eleven Fatui Harbingers? (Pierro)
-5. Who was the person who slayed Ursus the Drake? (Il Dottore)
-6. Who is the maiden mentioned in the artifact set: Crimson Witch of Flames? (La Signora)
-7. Who is the current Grandmaster of the Knights of Favonius? (Varka)
-8. Who is the first character to die on screen? (La Signora)
-9. What is Stormterror's true name? (Dvalin)
-10. Which organization is not part of the Tri-Commission? (Shogunate)
-11. What is the name of the wine that Razor's parents left for him? (Thousand-Wind Wine)
-12. What is Baizhu's goal in taking care of Qiqi? (To find the secret to immortality)
-13. How did Teppei die? (From using a Delusion)
-14. Where is Eleazer found? (Sumeru)
-15. Who is the first Aranara you meet? (Arana)
-16. Which is the blue Aranara? (Ararycan)
-17. Which Aranara sacrificed themselves? (Arama)
-18. How many of the original Seven still remain? (Two)
-19. Where was Old Mondstadt located? (Stormterror's Lair)
-20. Who is the founder of the Knights of Favonius? (Vennessa)
-21. Which Harbinger was first introduced in 'A Winter Night's Lazzo'? (Columbina)
-22. How many factions are there in Inazuma? (3)
-23. How many playable characters are related to the Kamisato Clan? (4)
-24. What is Fontaine's Ideal? (Justice)
-25. Where did Oceanids originate from? (Fontaine)
-26. Which region does 'Archon Quest Chapter III: Truth Amongst the Pages of Purana'
-take place in? (Sumeru)
-27. Who is the character that appears in 'Teyvat Chapter Storyline Preview: Travail, Snezhnaya Chapter'?
-(Pulcinella)
-28. What flower does Lumine wear in her hair? (Inteyvat)
-29. The Thunder Manifestation is a remnant of a late guardian of Tsurumi Island.
-What is the guardian's name? (Kanna Kapatcir)
-30. What is Timmie's imaginary friend? (A Ruin Guard)
-31. What is the codename for the Sustainer of Heavenly Principles as noted in the game files? (Asmoday)
-32. Where is the Adventurers' Guild's main headquarters located? (Snezhnaya)
-33. What species inhabited Teyvat before humans? (Vishaps)
-34. Why did Orobashi die? (He read the book 'Before Sun and Moon' and was sentenced to death by Celestia)
-
-Game-related:
-1. How many commisions are available daily? (4)
-2. How many characters are playable as of Version 3.4? (62)
-3. How many nations are explorable as of Version 3.4? (4)
-4. What is the name of the standard wish banner? (Wanderlust Invocation)
-5. How much Genesis Crystals does a 5 star character outfit cost? (2480)
-6. What is the elemental reaction when Dendro meets Electro? (Catalyze)
-7. Which of the following is a 5 star weapon? (Memory of Dust)
-8. What is the main stat for 'Flower of Life'? (Flat HP)
-9. How many elements are there? (7)
-10. What is the initial resin cap? (120)
-11. What was the first co-op event? (Elemental Crucible)
-12. Which element is most suitable to destory a Consecrated Red Vulture's Phagocytic Energy Block? (Pyro)
-13. What happens after the infused form of an Eremite ends? (They enter a weakened state)
-14. What is the maximum number of companions you can put in the Serenitea Pot? (8)
-15. How many realm layouts are available in the Serenitea Pot? (5)
-16. Which character can refund materials when crafting furniture? (Yoimiya)
-17. What is the max BP level? (50)
-18. What are the ingredients needed for Sweet Madame? (2 Fowl and 2 Sweet Flower)
-19. Which of the following is a 5 star dish? (Adeptus' Temptation)
-20. What is the weapons inventory cap? (2000)
-21. What is the maximum number of Condensed Resin that can you hold? (5)
-22. What is the code name of the Electro Hypostasis? (Aleph)
-23. Which region does Oceanid belong to? (Liyue)
-24. What does the third constellation do? (A three-level increase to Elemental Skill)
-25. Which boss has the voicelines: 'This opportunity is quite hard to come by.'? (Childe)
-26. What is(are) the element(s) that Childe: Foul Legacy Transformation wields? (Electro and Hydro)
-27. What effect does the Pyro element infused by Azhdaha produce? (Enhanced attack radius)
-28. What do the two sigils on the entrance of 'Beneath the Dragon-Queller' represent?
-(Azhdaha has increased resistance to the elements corresponding to the sigils)
-29. What is the minimum crit damage needed to obtain the first 'Purveyor of Punishment' achievement? (5,000)
-30. Which of the following weekly bosses cannot be done in co-op? (Stormterror)
-31. What is the max reputation level in Inazuma? (10)
-32. How many primogems do you get from Floors 9 to 12 for clearing the Spiral Abyss with 36 stars? (600)
-33. How many primogems can you obatin from daily commissions and claiming from Katheryne? (60)
+/What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Parent and Child(They aren't related
+/Who is Alhaitham's roommate?(Kaveh(Nahida(Traveler(Cyno
+/What is Mona's full name?(Mona Megistus(Astrologist Mona Megistus(Mona Narfidort(Mona Megistus The Second
+/How does Oz address Fischl?(Mein Fraulein(M'Lady(Mistress(Your Highness
+/What was the first name given to Wanderer?(Kabukimono(Scaramouche(Kunikuzushi(Makoto
+/When did Kaeya recieve his Vision?(When fighting Diluc(When Crepus died(When Diluc got his Vision(When saving Diluc from monsters
+/Which weapon is supposedly related to Razor?(Wolf's Gravestone(Rainslasher(Blackcliff Slasher(Favonius Greatsword
+/What is the name of Klee's mother?(Alice(Lisa(Jean(Ningguang
+/Which character is from Khaenri'ah?(Kaeya(Klee(Albedo(Alice
+/Who is in Benny's Adventure Team?(Bennett(Bennett and Traveler(Bennett and Fischl(Bennett and Royce
+/What does Sucrose have a collection of in her room?(Bones(Plants(Crystalflies(Books
+/Who is the author of the novel 'A Legend of Sword'?(Xingqiu(Albedo(Chang the Ninth(Yae Miko
+/Who is collaborating with Xingqiu to publish a book?(Albedo(No one(Yae Miko(Traveler
+/Where did Tartaglia get his powers from?(The Abyss(The Fatui(With his Vision(He was born with them
+/Who is Tartaglia's 'master'?(Skirk(Il Capitano(Tsaritsa(Pierro
+/Which character shares the same birthday as Genshin's anniversary?(Ayaka(Bennett(Amber(Zhongli
+/What does Ayato pull out of his sleeve during his idle?(Bubble Tea(Coffee(Dango Milk(A bottle of Sake
+/Who is the Acting Grand Master of the Knights of Favonius?(Jean(Vanessa(Diluc(Varka
+/Which aristocratic family does Eula belong to?(Lawrence(Ragnvindr(Gunnhildr(Rostova
+/Which character does the constellation 'Serval' belong to?(Collei(Tighnari(Razor(Alhaitham
+/Which of the following is the name of Beidou's C6?(Bane of Evil(Bane of All Evil(Bane of the Evils(Bane of the Deep
+/What does Ganyu love snacking on?(Qingxin(Violetgrass(Glaze Lily(Silk Flowers
+/Who does Keqing secretly look up to?(Rex Lapis(Ningguang(Traveler(Yun Jin
+/Who is the General Mahamatra?(Cyno(Alhaitham(Tighnari(Candace
+/Who is Beisht?(Osial's wife(Goddess of Salt(Azhdaha's Other Half(A Yaksha
+/Why does Layla always appear drowsy?(She sleepwalks(She works very hard(She's a night owl(She thinks sleep is for the weak
+/What was Tighnari's reason for wanting a Dendro Vision?(To reach high-hanging fruit(To move around sumeru most easily(For research(For power
+/Who is the founder of the Yae Publishing House?(Yae Miko(Kokomi(Raiden Shogun(Miss Hina
+/Who is Xiangling's mentor?(Madame Ping(Shenhe(Chef Mao(God of Stove
+/Which of the following characters have the highest flat attack stat?(Xiao(Hu Tao(Cyno(Eula
+/Which claymore character does not wield their weapon while dealing normal attacks?(Dori(Eula(Heizou(Sayu
+/Which character does the soundtrack 'Time to Shine' belong to?(Arataki Itto(Hu Tao(Klee(Keqing
+/Who is the featured 5 star in the banner 'Adrift in the Harbor'?(Ganyu(Mona(Nilou(Kokomi
+/When did Khaenri'ah fall?(500 years ago(5000 years ago(400 years ago(1000 years ago
+/What is the Cataclysm?(The Fall of Khaenri'ah(The Archon War(The Fall of King Deshret(When the Travelers fought the Unknown God
+/How many Yakshas were considered the foremost Yakshas?(5(2(3(8
+/Who is ranked first among the Eleven Fatui Harbingers?(Pierro(Il Dottore(Pulcinella(Columbina
+/Who was the person who slayed Ursus the Drake?(Il Dottore(No one(Raiden Shogun(Rex Lapis
+/Who is the maiden mentioned in the artifact set: Crimson Witch of Flames?(La Signora(Hu Tao(Alice(She does not exist
+/Who is the current Grandmaster of the Knights of Favonius?(Varka(Jean(Diluc(Andrius
+/Who is the first character to die on screen?(La Signora(Traveler's Sibling(Guizhong(No confirmed deaths so far
+/What is Stormterror's true name?(Dvalin(Andrius(Durin(Duran
+/Which organization is not part of the Tri-Commission?(Shogunate(Tenryou(Kanjou(Yashiro
+/What is the name of the wine that Razor's parents left for him?(Thousand-Wind Wine(Dandelion Wine(Osmanthus Wine(Grey Valley Sunset Wine
+/What is Baizhu's goal in taking care of Qiqi?(To find the secret to immortality(He treats Qiqi as his child(Qiqi is cute(Qiqi is helpful
+/How did Teppei die?(From using a Delusion(He was stabbed(He was getting sick(Old age
+/Where is Eleazer found?(Sumeru(Inazuma(Liyue(Mondstadt
+/Who is the first Aranara you meet?(Arana(Arama(Araima(Aramama
+/Which is the blue Aranara?(Ararycan(Areama(Arama(Arenara
+/Which Aranara sacrificed themselves?(Arama(Areama(Aramama(Arcinara
+/How many of the original Seven still remain?(Two(All of them(None(Five
+/Where was Old Mondstadt located?(Stormterror's Lair(Starfell Valley(Mappa Mare(Mare Jivari
+/Who is the founder of the Knights of Favonius?(Vennessa(Varka(Crepus(Barbatos
+/Which Harbinger was first introduced in 'A Winter Night's Lazzo'?(Columbina(Childe(Il Dottore(Arlecchino
+/How many factions are there in Inazuma?(3(5(6(9
+/How many playable characters are related to the Kamisato Clan?(4(3(2(5
+/What is Fontaine's Ideal?(Justice(Eternity(Knowledge(Freedom
+/Where did Oceanids originate from?(Fontaine(Mondstadt(Liyue(Enkanomiya
+/Which region does 'Archon Quest Chapter III: Truth Amongst the Pages of Purana' take place in?(Sumeru(Liyue(Inazuma(Fontaine
+/Who is the character that appears in 'Teyvat Chapter Storyline Preview: Travail, Snezhnaya Chapter'?(Pulcinella(Childe(Scaramouche(Il Dottore
+/What flower does Lumine wear in her hair?(Inteyvat(Cecilia(Padisarah(Glaze Lily
+/The Thunder Manifestation is a remnant of a late guardian of Tsurumi Island. What is the guardian's name?(Kanna Kapatcir(Thunder Manifestation(Metis(Eurynome
+/What is Timmie's imaginary friend?(A Ruin Guard(He has none(Pigeons(A Ruin Drake
+/What is the codename for the Sustainer of Heavenly Principles as noted in the game files?(Asmoday(Absinthe(Alice(Asbestos
+/Where is the Adventurers' Guild's main headquarters located?(Snezhnaya(Mondstadt(Fontaine(Netlan
+/What species inhabited Teyvat before humans?(Vishaps(Hilichurls(Archons(Other animals
+/How many commisions are available daily?(4(2(5(10
+/How many characters are playable as of Version 3.4?(62(75(68(67
+/How many nations are explorable as of Version 3.4?(4(3(5(2
+/What is the name of the standard wish banner?(Wanderlust Invocation(Beginner's Wish(Discerner of Enigmas(Tapestry of Gold
+/Which character from the standard wish banner has their own banner?(Keqing(Mona(Diluc(Qiqi
+/How much Genesis Crystals does a 5 star character outfit cost?(2480(1600(4230(5600
+/What is the elemental reaction when Dendro meets Electro?(Catalyze(Quicken(Bloom(Burgeon
+/Which of the following is a 5 star weapon?(Memory of Dust(Rust(Xiphos' Moonlight(Dark Iron Sword
+/What is the main stat for 'Flower of Life'?(Flat HP(Flat ATK(Flat DEF(DEF%
+/How many elements are there?(7(6(8(5
+/What is the initial resin cap?(120(80(200(160
+/What was the first co-op event?(Elemental Crucible(Windtrace(Unreconciled Stars(Theater Mechanicus
+/Which element is most suitable to destory a Consecrated Red Vulture's Phagocytic Energy Block?(Pyro(Electro(Hydro(Cryo
+/What happens after the infused form of an Eremite ends(They enter a weakened state?(They lose HP(They deal AOE damage(They call reinforcments
+/What is the maximum number of companions you can put in the Serenitea Pot?(8(10(12(5
+/How many realm layouts are available in the Serenitea Pot?(5(3(4(6
+/Which character can refund materials when crafting furniture?(Yoimiya(Sayu(Albedo(Layla
+/What is the max BP level?(50(55(45(48
+/What are the ingredients needed for Sweet Madame?(2 Fowl + 2 Sweet Flower(2 Fowl + 1 Sweet Flower(3 Fowl + 1 Sweet Flower(2 Fowl + 3 Sugar
+/Which of the following is a 5 star dish?(Adeptus' Temptation(Golden Fried Chicken(Bountiful Year(Milky Mushroom Crisp Tower
+/What is the weapons inventory cap?(2000(3500(There is no cap(1800
+/What is the maximum number of Condensed Resin that can you hold?(5(3(4(8
+/What is the code name of the Electro Hypostasis?(Aleph(Beth(Dalet(Gimel
+/Which region does the Boss Oceanid belong to?(Liyue(Fontaine(Mondstadt(It does not belong to a region
+/What 4 Star weapon can you recieve for free in the base game?(Prototype Rancour(Toukabou Shigure(Sacrifical Sword(Dark Iron Sword
+/Which boss has the voicelines: 'This opportunity is quite hard to come by.'?(Childe(Raiden Shogun(Scaramouche(La Signora
+/What is/are the element/s that Childe: Foul Legacy Transformation wields?(Electro + Hydro(Hydro(Electro(Cryo + Electro
+/What effect does the Pyro element infused by Azhdaha produce?(Enhanced Attack Radius(Constant Damage per Second(Decreased Character Defense(Removes Character Elemental Energy
+/What is the minimum crit damage needed to obtain the first 'Purveyor of Punishment' achievement?(5,000(100,000(10,000(50,000
+/Which of the following weekly bosses cannot be done in co-op?(Stormterror(La Signora(Raiden Shogun(Childe
+/What is the max reputation level in Inazuma?(10(8(20(18
+/How many primogems do you get from Floors 9 to 12 for clearing the Spiral Abyss with 36 stars?(600(1000(800(540
+/How many primogems can you obatin from daily commissions and claiming from Katheryne?(60(40(80(20
+/How many locations can the Unusual Hilichurl appear?(14(9(7(16
