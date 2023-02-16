@@ -2,6 +2,7 @@ var username = localStorage.getItem("username");
 var userprimo = username;
 
 userprimo += "primo";
+// localStorage.setItem(userprimo, 450); /*For Testing*/
 
 if (localStorage.getItem(userprimo) == null) {
   /*If theuser has no primogems, create one with 0*/

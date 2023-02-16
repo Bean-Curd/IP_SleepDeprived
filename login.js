@@ -57,3 +57,5 @@ const clicklogin = (event) => {
     username
   ); /*To call username in script.js so the Question local storage is user specific*/
 };
+
+//localStorage.clear(); /*To clear the questions for testing*/

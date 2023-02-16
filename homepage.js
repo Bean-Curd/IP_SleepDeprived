@@ -64,6 +64,8 @@ document.getElementById("MYbtn1").onclick = () => {
           ) {
             /*If they want to try the quiz at the same day as the day they completed the quiz, deny entry*/
             alert("You have already done 5 tries today!");
+            window.location.href =
+              "http://127.0.0.1:5500/character_trivia.html";
           } else if (
             taptryagain.toDateString() !=
             new Date(

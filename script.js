@@ -267,6 +267,7 @@ function checkbuttonid(id) {
           }
           if (4 > response[i].numtrydone >= 0) {
             /*If the user has done/started the Character Trivia today, update try5date, compare try1date and try5date*/
+            var updatelasttry = new Date();
 
             var jsondata = {
               email: username,
@@ -324,6 +325,10 @@ function checkbuttonid(id) {
 
               $.ajax(puttime).done(function (response) {
                 console.log(response);
+                // document.getElementsByClassName("MYopts").disabled = true;
+                // setTimeout(function () {
+                //   document.getElementsByClassName("MYopts").disabled = false;
+                // }, 5000);
                 window.location.reload(true);
               });
             } else if (
