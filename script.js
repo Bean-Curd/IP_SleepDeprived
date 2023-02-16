@@ -179,92 +179,193 @@ for (var i = 1; i <= 4; i++) {
     correct = i; /*Let correct be the correct position number*/
   }
 }
-document.getElementById("MYopt" + correct).onclick = () => {
-  /*When the correct option is clicked*/ /*Arrow function shortcut for function(){}*/
-  if (localStorage.getItem(storagename)[0] == 0) {
-    /*If the question saved is 0,0 -> has not been answered correctly before, change to 1,1*/
-    localStorage.setItem(storagename, [1, 1]);
-  } else {
-    var storearray = localStorage
-      .getItem(storagename)
-      .split(","); /*So the comma does not affect the position*/
-    var counter = parseInt(
-      storearray[1]
-    ); /*If the question has been answered correctly before -> increase the 2nd one by 1 */ /*parseInt -> make sure it is an integer*/
-    localStorage.setItem(storagename, [1, counter + 1]);
-  }
+/*If the button is pressed:*/
+document.getElementById("MYopt1").onclick = () => {
+  checkbuttonid(1);
+};
+document.getElementById("MYopt2").onclick = () => {
+  checkbuttonid(2);
+};
+document.getElementById("MYopt3").onclick = () => {
+  checkbuttonid(3);
+};
+document.getElementById("MYopt4").onclick = () => {
+  checkbuttonid(4);
 };
 
+function checkbuttonid(id) {
+  if (id == correct) {
+    /*When the correct option is clicked*/ /*Arrow function shortcut for function(){}*/
+    if (localStorage.getItem(storagename)[0] == 0) {
+      /*If the question saved is 0,0 -> has not been answered correctly before, change to 1,1*/
+      localStorage.setItem(storagename, [1, 1]);
+    } else {
+      var storearray = localStorage
+        .getItem(storagename)
+        .split(","); /*So the comma does not affect the position*/
+      var counter = parseInt(
+        storearray[1]
+      ); /*If the question has been answered correctly before -> increase the 2nd one by 1 */ /*parseInt -> make sure it is an integer*/
+      localStorage.setItem(storagename, [1, counter + 1]);
+    }
+  } else if (id != correct) {
+    /*If the clicked buttons is not the correct answer*/
+    alert("The Answer is incorrect!");
+    var usernum;
+    let gettime = {
+      async: true,
+      crossDomain: true,
+      url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache",
+      },
+    };
+
+    $.ajax(gettime).done(function (response) {
+      for (var i = 0; i < response.length; i++) {
+        /*Looks for the user's account*/
+        if (response[i].email == username) {
+          usernum = i; /*Gets the user's account position*/
+          if (4 > response[i].numtrydone >= 0) {
+            /*If the user has done/started the Character Trivia today, update try5date, compare try1date and try5date*/
+            var updatelasttry = new Date();
+            var tries = response[i].numtrydone;
+            tries += 1;
+
+            var jsondata = {
+              email: username,
+              password: response[i].password,
+              try5date: updatelasttry,
+              numtrydone: tries,
+            };
+
+            var puttime = {
+              async: true,
+              crossDomain: true,
+              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache",
+              },
+              processData: false,
+              data: JSON.stringify(jsondata),
+            };
+
+            $.ajax(puttime).done(function (response) {
+              console.log(response);
+              window.location.reload(true);
+            });
+
+            if (
+              new Date(response[i].try1date).toDateString() ==
+              updatelasttry.toDateString()
+            ) {
+              /*If questions were answered on the same day, continue adding to the 5 question limit counter (numtrydone)*/
+              var tries = response[i].numtrydone;
+              tries += 1;
+
+              var jsondata = {
+                email: username,
+                password: response[i].password,
+                numtrydone: tries,
+              };
+
+              var puttime = {
+                async: true,
+                crossDomain: true,
+                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                method: "PUT",
+                headers: {
+                  "content-type": "application/json",
+                  "x-apikey": APIKEY,
+                  "cache-control": "no-cache",
+                },
+                processData: false,
+                data: JSON.stringify(jsondata),
+              };
+
+              $.ajax(puttime).done(function (response) {
+                console.log(response);
+                window.location.reload(true);
+              });
+            } else if (
+              new Date(response[i].try1date).toDateString() !=
+              updatelasttry.toDateString()
+            ) {
+              /*If questions were answered on different days, update try1date, try5date and reset 5 question limit counter to 1 (numtrydone)*/
+              alert(
+                "The day has been reset, the previous question will be counted as one of your tries for today!"
+              );
+              var jsondata = {
+                email: username,
+                password: response[i].password,
+                try1date: updatelasttry,
+                numtrydone: 1,
+              };
+
+              var puttime = {
+                async: true,
+                crossDomain: true,
+                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                method: "PUT",
+                headers: {
+                  "content-type": "application/json",
+                  "x-apikey": APIKEY,
+                  "cache-control": "no-cache",
+                },
+                processData: false,
+                data: JSON.stringify(jsondata),
+              };
+
+              $.ajax(puttime).done(function (response) {
+                console.log(response);
+                window.location.reload(true);
+              });
+            }
+
+            if (response[i].numtrydone == 4) {
+              /*If it is the last try, bring back to homepage and deny entry*/
+              var tries = response[i].numtrydone;
+              var updatetryagain = updatelasttry;
+              tries += 1;
+
+              var jsondata = {
+                email: username,
+                password: response[i].password,
+                tryagain: updatetryagain,
+                numtrydone: tries,
+              };
+
+              var puttime = {
+                async: true,
+                crossDomain: true,
+                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                method: "PUT",
+                headers: {
+                  "content-type": "application/json",
+                  "x-apikey": APIKEY,
+                  "cache-control": "no-cache",
+                },
+                processData: false,
+                data: JSON.stringify(jsondata),
+              };
+
+              $.ajax(puttime).done(function (response) {
+                console.log(response);
+                alert("You have completed all your tries for today!");
+                window.location.href = "http://127.0.0.1:5500/homepage.html";
+              });
+            }
+          }
+        }
+      }
+    });
+  }
+}
+
 //localStorage.clear(); /*To clear the questions for testing*/
-
-// Filler
-// Filler
-// Filler
-// Filler
-// Filler
-
-// /*5 questions a day limit*/
-// $(document).ready(function () {
-//   document.getElementById("MYbtn1").onclick = () => {
-//     let gettime = {
-//       async: true,
-//       crossDomain: true,
-//       url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-//       method: "GET",
-//       headers: {
-//         "content-type": "application/json",
-//         "x-apikey": APIKEY,
-//         "cache-control": "no-cache",
-//       },
-//     };
-
-//     $.ajax(gettime).done(function (response) {
-//       for (var i = 0; i < response.length; i++) {
-//         console.log(response[i]);
-//       }
-//     });
-//   };
-
-// let gettime = {
-//   async: true,
-//   crossDomain: true,
-//   url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-//   method: "GET",
-//   headers: {
-//     "content-type": "application/json",
-//     "x-apikey": APIKEY,
-//     "cache-control": "no-cache",
-//   },
-// };
-
-// $.ajax(gettime).done(function (response) {
-//   for (var i = 0; i < response.length; i++) {
-//     console.log(response[i]);
-//   }
-// });
-
-// var firsttry = new Date().toDateString();
-// var lasttry = new Date();
-
-//   var jsondata = { field1: "new value", field2: "xxx" };
-//   var puttime = {
-//     async: true,
-//     crossDomain: true,
-//     url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[0]}`,
-//     method: "PUT",
-//     headers: {
-//       "content-type": "application/json",
-//       "x-apikey": APIKEY,
-//       "cache-control": "no-cache",
-//     },
-//     processData: false,
-//     data: JSON.stringify(jsondata),
-//   };
-
-//   $.ajax(puttime).done(function (res) {
-//     response = res;
-//     for (var i = 0; i < res.length; i++) {
-//       console.log(res[i]);
-//     }
-//   });
-// });
