@@ -1,6 +1,6 @@
 /*5 questions a day limit*/
-const APIKEY = "63e531fa478852088da67f67";
-// const APIKEY = "63ee3468478852088da68361"; //The demo one
+// const APIKEY = "63e531fa478852088da67f67";
+const APIKEY = "63ee3468478852088da68361"; //The demo one
 // const APIKEY = "63eed80f478852088da6838f"; //The demo two
 
 var username = localStorage.getItem("username");
@@ -10,8 +10,8 @@ document.getElementById("MYbtn1").onclick = () => {
   let gettime = {
     async: true,
     crossDomain: true,
-    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-    // url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
+    // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
     // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
     method: "GET",
     headers: {
@@ -40,8 +40,8 @@ document.getElementById("MYbtn1").onclick = () => {
           var puttime = {
             async: true,
             crossDomain: true,
-            url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
-            // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+            // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+            url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
             // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
             method: "PUT",
             headers: {
@@ -54,7 +54,7 @@ document.getElementById("MYbtn1").onclick = () => {
           };
 
           $.ajax(puttime).done(function (response) {
-            console.log(response);
+            console.log("First Try Today");
             window.location.href =
               "http://127.0.0.1:5500/character_trivia.html";
           });
@@ -75,6 +75,13 @@ document.getElementById("MYbtn1").onclick = () => {
             ).toDateString() /*If it is the next day, reset variables and start again*/
           ) {
             var try1 = new Date();
+            document.getElementById("MYanimation").innerHTML =
+              '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
+            setTimeout(myURL, 5000);
+            function myURL() {
+              window.location.href =
+                "http://127.0.0.1:5500/character_trivia.html";
+            }
 
             var jsondata = {
               email: username,
@@ -88,8 +95,8 @@ document.getElementById("MYbtn1").onclick = () => {
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
-              // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
               // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
@@ -102,14 +109,19 @@ document.getElementById("MYbtn1").onclick = () => {
             };
 
             $.ajax(puttime).done(function (response) {
-              console.log(response);
-              window.location.href =
-                "http://127.0.0.1:5500/character_trivia.html";
+              console.log("New Day Reset");
             });
           }
         } else if (0 < response[i].numtrydone <= 4) {
           /*If user has not used all their tries, let them in*/
-          window.location.href = "http://127.0.0.1:5500/character_trivia.html";
+          console.log("Continue Tries");
+          document.getElementById("MYanimation").innerHTML =
+            '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
+          setTimeout(myURL, 3000);
+          function myURL() {
+            window.location.href =
+              "http://127.0.0.1:5500/character_trivia.html";
+          }
         }
       }
     }
