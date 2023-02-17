@@ -1,5 +1,5 @@
-const APIKEY = "63e531fa478852088da67f67";
-// const APIKEY = "63ee3468478852088da68361"; //The demo one
+// const APIKEY = "63e531fa478852088da67f67";
+const APIKEY = "63ee3468478852088da68361"; //The demo one
 // const APIKEY = "63eed80f478852088da6838f"; //The demo two
 const clicklogin = (event) => {
   /*The message below the login form*/
@@ -11,8 +11,8 @@ const clicklogin = (event) => {
   let getaccount = {
     async: true,
     crossDomain: true,
-    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-    // url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
+    // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
     // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
     method: "GET",
     headers: {
@@ -33,15 +33,9 @@ const clicklogin = (event) => {
     }
     if (check) {
       /*Plays the Lottie Animation*/
-      $("#MYanimation").html(`<lottie-player
-        src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json"
-        background="transparent"
-        speed="1.5"
-        style="width: 100vw; height: 100vh"
-        loop
-        autoplay
-      ></lottie-player>
-    </div>`);
+      $("#MYanimation").html(
+        '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; margin-top: -25vh; margin-left: -60vw; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>'
+      );
       setTimeout(myURL, 3000);
       function myURL() {
         window.location.href = "http://127.0.0.1:5500/homepage.html";
