@@ -482,15 +482,12 @@ function checkbuttonid(id) {
     });
   } else if (id != correct) {
     /*If the clicked buttons is not the correct answer*/
-    var timenotup = false;
     if (id != 5) {
-      timenotup = true;
       alert("The Answer is incorrect!");
+      clearInterval(timer);
     }
     if (id == 5) {
-      if (timenotup == false) {
-        alert("Time is up!");
-      }
+      alert("Time is up!");
     }
     var usernum;
     let gettime = {
