@@ -1,4 +1,4 @@
-<h1>IP SleepDeprived Slimepedia Website</h1>
+<h2>IP SleepDeprived Slimepedia Website</h2>
 
 A Genshin website that allows users to collect Genshin characters as slimes. Players answer trivia questions to unlock new information on the characters, and get rewards.
 
