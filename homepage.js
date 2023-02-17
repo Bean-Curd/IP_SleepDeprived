@@ -1,6 +1,8 @@
 /*5 questions a day limit*/
-// const APIKEY = "63e531fa478852088da67f67";
-const APIKEY = "63ee3468478852088da68361"; //The demo one
+const APIKEY = "63e531fa478852088da67f67";
+// const APIKEY = "63ee3468478852088da68361"; //The demo one
+// const APIKEY = "63eed80f478852088da6838f"; //The demo two
+
 var username = localStorage.getItem("username");
 
 var usernum;
@@ -8,8 +10,9 @@ document.getElementById("MYbtn1").onclick = () => {
   let gettime = {
     async: true,
     crossDomain: true,
-    // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-    url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
+    url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+    // url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
+    // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -37,8 +40,9 @@ document.getElementById("MYbtn1").onclick = () => {
           var puttime = {
             async: true,
             crossDomain: true,
-            // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
-            url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+            url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+            // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+            // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -54,7 +58,7 @@ document.getElementById("MYbtn1").onclick = () => {
             window.location.href =
               "http://127.0.0.1:5500/character_trivia.html";
           });
-        } else if (response[i].numtrydone == 5) {
+        } else if (response[i].numtrydone >= 5) {
           /*If user has used all 5 tries*/
           var taptryagain =
             new Date(); /*Current time they want to try the quiz again*/
@@ -64,8 +68,6 @@ document.getElementById("MYbtn1").onclick = () => {
           ) {
             /*If they want to try the quiz at the same day as the day they completed the quiz, deny entry*/
             alert("You have already done 5 tries today!");
-            window.location.href =
-              "http://127.0.0.1:5500/character_trivia.html";
           } else if (
             taptryagain.toDateString() !=
             new Date(
@@ -86,8 +88,9 @@ document.getElementById("MYbtn1").onclick = () => {
             var puttime = {
               async: true,
               crossDomain: true,
-              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
-              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
                 "content-type": "application/json",
