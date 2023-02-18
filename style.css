@@ -197,6 +197,63 @@
 
 /*CSS for general_trivia*/
 
+.MYHPcont{
+    display: flex; /*Center the box*/
+    flex-direction: row;
+}
+
+.MYHP{
+    position: absolute;
+    margin-left: -50vw;
+    z-index: 2;
+}
+
+#MYHP1{
+    width: 3%;
+    height: 3%;
+}
+
+#MYHP2{
+    width: 3%;
+    height: 3%;
+    margin-left: 3vw; 
+}
+
+#MYHP3{
+    width: 3%;
+    height: 3%;
+    margin-left: 6vw; 
+}
+
+#MYHP4{
+    width: 3%;
+    height: 3%;
+    margin-left: 9vw; 
+}
+
+.MYBlobcont{
+    display: flex; /*Center the box*/
+    align-items: center;  
+    justify-content: center;
+    z-index: 2;
+}
+
+#MYCBlob{
+    position: absolute;
+    width: 27vh;
+    height: 27vh;
+    margin-top: 25vh;
+    margin-left: -40vh;
+}
+
+#MYHBlob{
+    position: absolute;
+    width: 25vh;
+    height: 25vh;
+    margin-top: 28vh;
+    margin-left: 15vh;
+}
+
 .MYGTcdcont{ /*Countdown Timer Container*/
     display: flex; /*Center the box*/
     align-items: center;
@@ -306,7 +363,6 @@
     height: 27vh;
     margin-top: 108vh;
     margin-right: 55vh;
-    z-index: 1; /*Moves the BG behind the buttons*/
 }
 
 .MYfightr{ /*Fightpage R Patch*/
@@ -315,7 +371,6 @@
     height: 27vh;
     margin-top: 108vh;
     margin-left: 55vh;
-    z-index: 1; /*Moves the BG behind the buttons*/
 }
 
 .MYfight{ /*Fightpage BG*/
@@ -582,7 +637,7 @@
         min-height: 80px; 
         min-width: 400px;
         font-size: 15px;
-    }
+    }    
 }
 
 @media (max-width: 1200px) { /*For even smaller screen widths*/
@@ -596,6 +651,7 @@
         font-size: 22px;
     }
 }
+
 @media (max-width: 1050px) { /*For even even smaller screen widths*/
     #MYGTopt1{
         margin-right: 40vw;
@@ -616,6 +672,34 @@
         position: fixed; /*Prevents the BG from being scrolled*/
         z-index: -1; /*Moves the BG behind the buttons*/
     }
+    .MYfightl{ /*Fightpage L Patch*/
+        position: absolute; /*Prevents the BG from being scrolled*/
+        width: 30vw;
+        height: 27vh;
+        margin-top: 108vh;
+        margin-right: 45vh;
+    }
+    .MYfightr{ /*Fightpage R Patch*/
+        position: absolute; /*Prevents the BG from being scrolled*/
+        width: 30vw;
+        height: 27vh;
+        margin-top: 108vh;
+        margin-left: 45vh;
+    }
+    #MYCBlob{
+        position: absolute;
+        width: 27vh;
+        height: 27vh;
+        margin-top: 25vh;
+        margin-left: -34vh;
+    }
+    #MYHBlob{
+        position: absolute;
+        width: 25vh;
+        height: 25vh;
+        margin-top: 28vh;
+        margin-left: 11vh;
+    }
 }
 
 @media (max-width: 950px) { /*For even even even smaller screen widths*/
@@ -631,7 +715,6 @@
         height: 27vh;
         margin-top: 108vh;
         margin-right: 40vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
     }
     .MYfightr{ /*Fightpage R Patch*/
         position: absolute; /*Prevents the BG from being scrolled*/
@@ -639,11 +722,24 @@
         height: 27vh;
         margin-top: 108vh;
         margin-left: 40vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
+    }
+    #MYCBlob{
+        position: absolute;
+        width: 23vh;
+        height: 23vh;
+        margin-top: 30vh;
+        margin-left: -30vh;
+    }
+    #MYHBlob{
+        position: absolute;
+        width: 21vh;
+        height: 21vh;
+        margin-top: 33vh;
+        margin-left: 12vh;
     }
 }
 
-@media (max-width: 730px) { /*For even even even even smaller screen widths*/
+@media (max-width: 750px) { /*For even even even even smaller screen widths*/
     .MYfight{ /*Background Image*/
         display: block;
         object-position: -15vw;
@@ -683,7 +779,6 @@
         height: 25vh;
         margin-top: 108vh;
         margin-right: 35vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
     }
     .MYfightr{ /*Fightpage R Patch*/
         position: absolute; /*Prevents the BG from being scrolled*/
@@ -691,7 +786,39 @@
         height: 25vh;
         margin-top: 108vh;
         margin-left: 35vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
+    }
+    #MYHP1{
+        width: 5%;
+        height: 5%;
+    }
+    #MYHP2{
+        width: 5%;
+        height: 5%;
+        margin-left: 5vw; 
+    }
+    #MYHP3{
+        width: 5%;
+        height: 5%;
+        margin-left: 10vw; 
+    }
+    #MYHP4{
+        width: 5%;
+        height: 5%;
+        margin-left: 15vw; 
+    }
+    #MYCBlob{
+        position: absolute;
+        width: 21vh;
+        height: 21vh;
+        margin-top: 30vh;
+        margin-left: -25vh;
+    }
+    #MYHBlob{
+        position: absolute;
+        width: 19vh;
+        height: 19vh;
+        margin-top: 33vh;
+        margin-left: 7vh;
     }
 }
 
@@ -704,19 +831,17 @@
     }
     .MYfightl{ /*Fightpage L Patch*/
         position: absolute; /*Prevents the BG from being scrolled*/
-        width: 40vw;
+        width: 34vw;
         height: 25vh;
         margin-top: 108vh;
         margin-right: 30vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
     }
     .MYfightr{ /*Fightpage R Patch*/
         position: absolute; /*Prevents the BG from being scrolled*/
-        width: 40vw;
+        width: 34vw;
         height: 25vh;
         margin-top: 108vh;
         margin-left: 30vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
     }
 }
 
@@ -727,7 +852,6 @@
         height: 22vh;
         margin-top: 103vh;
         margin-right: 25vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
     }
     .MYfightr{ /*Fightpage R Patch*/
         position: absolute; /*Prevents the BG from being scrolled*/
@@ -735,7 +859,20 @@
         height: 22vh;
         margin-top: 103vh;
         margin-left: 25vh;
-        z-index: 1; /*Moves the BG behind the buttons*/
+    }
+    #MYCBlob{
+        position: absolute;
+        width: 19vh;
+        height: 19vh;
+        margin-top: 30vh;
+        margin-left: -22vh;
+    }
+    #MYHBlob{
+        position: absolute;
+        width: 17vh;
+        height: 17vh;
+        margin-top: 33vh;
+        margin-left: 4vh;
     }
 }
 
