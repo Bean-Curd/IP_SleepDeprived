@@ -561,7 +561,87 @@
     background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
 }
 
-/*Profile page*/
+/*Lose page*/
+
+.MYlosepage{ 
+    background-color: #3e3c46;
+    font-family: "HYWenHei-85W";
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MYlose{ 
+    background-color: #ffffff;
+    padding: 5vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#MYlose{
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+.MYreturnbtn{ 
+    margin-top: 5vh; /* Space the button out */
+    border: none; /*Button format and style*/
+    border-radius: 10px;
+    height: 60px; 
+    width: 40%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+}
+
+.MYreturnbtn:hover{
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+/*Win page*/
+
+.MYwinpage{ 
+    background-color: #3e3c46;
+    font-family: "HYWenHei-85W";
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MYwin{ 
+    background-color: #ffffff;
+    padding: 5vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#MYwin{
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+.MYreturnbtn{ 
+    margin-top: 5vh; /* Space the button out */
+    border: none; /*Button format and style*/
+    border-radius: 10px;
+    height: 60px; 
+    width: 40%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+}
+
+.MYreturnbtn:hover{
+    background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
+}
+
+/*Profile page @media*/
 
 @media (max-width: 1000px) { /*For smaller screen widths*/
     .MYback{ /*Back arrow*/
@@ -1016,5 +1096,18 @@
 @media (max-width: 400px) { /*For even even even even smaller screen widths*/
     .MYprofile{ /*Profile Icon*/
         width: 20vw;
+    }
+}
+
+/*Lose + Win page @media*/
+@media (max-width: 500px) { /*For smaller screen widths*/
+    .MYreturnbtn{ 
+        width: 60%;
+        height: 60px; 
+    } #MYwin{
+        position: relative;
+        margin-top: 3vh;
+        width: 40%;
+        height: 40%;
     }
 }
