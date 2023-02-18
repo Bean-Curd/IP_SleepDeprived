@@ -31,6 +31,8 @@ Future Features:
 - The help option would give the question to another player who logged in
 - If a question the user requested for help for is answered correctly, the user would be given the rewards the next day
 - Gives the user Character Materials for the 1st, 10th and 20th questions of each character answered
+- Unlocks information according to Character Trivia questions answered for the first time
+- A favorite option for characters in Genshin Trivia
 - Implement the convert 160 Primogems for new character information in the shop
 - More Characters would be added for more content
 - Randomized Enemies and Reward Drops based on those enemies in the Genshin Trivia
