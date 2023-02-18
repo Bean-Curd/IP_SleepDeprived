@@ -4,8 +4,7 @@ const APIKEY = "63ee3468478852088da68361"; //The demo one
 
 /*Genshin Questions List*/
 
-var list = `
-What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Parent and Child(They aren't related
+var list = `What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Parent and Child(They aren't related
 /Who is Alhaitham's roommate?(Kaveh(Nahida(Traveler(Cyno
 /What is Mona's full name?(Mona Megistus(Astrologist Mona Megistus(Mona Narfidort(Mona Megistus The Second
 /How does Oz address Fischl?(Mein Fraulein(M'Lady(Mistress(Your Highness
@@ -97,7 +96,7 @@ What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Pa
 /Which region does the Boss Oceanid belong to?(Liyue(Fontaine(Mondstadt(It does not belong to a region
 /What 4 Star weapon can you recieve for free in the base game?(Prototype Rancour(Toukabou Shigure(Sacrifical Sword(Dark Iron Sword
 /Which boss has the voicelines: 'This opportunity is quite hard to come by.'?(Childe(Raiden Shogun(Scaramouche(La Signora
-/What is/are the element/s that Childe: Foul Legacy Transformation wields?(Electro + Hydro(Hydro(Electro(Cryo + Electro
+/What element or elements does Childe: Foul Legacy Transformation wield?(Electro + Hydro(Hydro(Electro(Cryo + Electro
 /What effect does the Pyro element infused by Azhdaha produce?(Enhanced Attack Radius(Constant Damage per Second(Decreased Character Defense(Removes Character Elemental Energy
 /What is the minimum crit damage needed to obtain the first 'Purveyor of Punishment' achievement?(5,000(100,000(10,000(50,000
 /Which of the following weekly bosses cannot be done in co-op?(Stormterror(La Signora(Raiden Shogun(Childe
@@ -120,37 +119,21 @@ What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Pa
 // }
 
 var username = localStorage.getItem("username");
-var chara = list.split("/"); /*Split the Questions*/
+var qns = list.split("/"); /*Split the Questions*/
 
-// var vqns = chara[0].split("/"); /*Split by Questions*/
-// var zqns = chara[1].split("/");
-// var rqns = chara[2].split("/");
-// var nqns = chara[3].split("/");
+var qnnum = Math.floor(Math.random() * 100); /*Random question number*/
+var qn;
 
-// var storagename = username;
-
-// const chara_array = [vqns, zqns, rqns, nqns]; /*Array for different characters*/
-
-// var charanum = Math.floor(Math.random() * 4); /*Random character*/
-// storagename += charanum;
-
-var qnnum = Math.floor(Math.random() * 20); /*Random question number*/
-// storagename += qnnum;
-
-// var qn;
-
-for (var i = 0; i < chara_array[charanum].length; i++) {
+for (var i = 0; i < qns.length; i++) {
   /*Calls the randomized question*/
 
   if (i == qnnum) {
     qn =
-      chara_array[charanum][i].split(
-        "("
-      ); /*Splits the question into its questions and answers */
+      qns[i].split("("); /*Splits the question into its questions and answers */
   }
 }
 
-document.getElementById("Question").innerHTML =
+document.getElementById("GTQuestion").innerHTML =
   qn[0]; /*Puts the Question in the Question Box*/
 
 const nums = [1, 2, 3, 4];
@@ -165,29 +148,21 @@ for (var i = 0; i < 4; i++) {
 
 for (var i = 0; i < 4; i++) {
   /*To place the answers*/
-  var optname = "MYopt" + (i + 1);
+  var optname = "MYGTopt" + (i + 1);
   document.getElementById(optname).innerHTML = qn[order[i]];
-}
-
-if (localStorage.getItem(storagename) == null) {
-  /*If the Question has not been saved in local storage, create one with 0,0*/
-  localStorage.setItem(
-    storagename,
-    [0, 0]
-  ); /*1st 0 is for 1st correct try, 2nd 0 is a counter for number of correct try*/
 }
 
 var correct;
 for (var i = 1; i <= 4; i++) {
   /*If the answer is the same as the correct answer in the List*/
-  if (document.getElementById("MYopt" + i).innerHTML == qn[1]) {
+  if (document.getElementById("MYGTopt" + i).innerHTML == qn[1]) {
     correct = i; /*Let correct be the correct position number*/
   }
 }
 
-/*30 Second Countdown for Questions*/
+/*30 Second GTCountdown for Questions*/
 var seconds = 30000;
-var cd = document.getElementById("Countdown");
+var cd = document.getElementById("GTCountdown");
 
 var timer = setInterval(countdown, 1000);
 
@@ -202,16 +177,16 @@ function countdown() {
 }
 
 /*If the button is pressed:*/
-document.getElementById("MYopt1").onclick = () => {
+document.getElementById("MYGTopt1").onclick = () => {
   checkbuttonid(1);
 };
-document.getElementById("MYopt2").onclick = () => {
+document.getElementById("MYGTopt2").onclick = () => {
   checkbuttonid(2);
 };
-document.getElementById("MYopt3").onclick = () => {
+document.getElementById("MYGTopt3").onclick = () => {
   checkbuttonid(3);
 };
-document.getElementById("MYopt4").onclick = () => {
+document.getElementById("MYGTopt4").onclick = () => {
   checkbuttonid(4);
 };
 
@@ -240,7 +215,7 @@ function checkbuttonid(id) {
         var username = localStorage.getItem("username");
         if (response[i].email == username) {
           usernum = i; /*Gets the user's account position*/
-          if (response[i].numtrydone >= 4) {
+          if (response[i].gtnumtrydone >= 4) {
             /*If it is the last try, bring back to homepage and deny entry*/
             alert("You have completed all your tries for today!");
             document.getElementById("MYanimation").innerHTML =
@@ -250,14 +225,14 @@ function checkbuttonid(id) {
               window.location.href = "http://127.0.0.1:5500/homepage.html";
             }
             var updatelasttry = new Date();
-            var tries = response[i].numtrydone;
+            var tries = response[i].gtnumtrydone;
             tries += 1;
 
             var jsondata = {
               email: username,
               password: response[i].password,
-              tryagain: updatelasttry,
-              numtrydone: tries,
+              gttryagain: updatelasttry,
+              gtnumtrydone: tries,
             };
 
             var puttime = {
@@ -277,8 +252,8 @@ function checkbuttonid(id) {
             };
 
             $.ajax(puttime).done(function (response) {});
-          } else if (4 > response[i].numtrydone >= 0) {
-            /*If the user has done/started the Character Trivia today, update try5date, compare try1date and try5date*/
+          } else if (4 > response[i].gtnumtrydone >= 0) {
+            /*If the user has done/started the Character Trivia today, update gttry5date, compare gttry1date and gttry5date*/
             document.getElementById("MYanimation").innerHTML =
               '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
             setTimeout(myURL, 5000);
@@ -290,7 +265,7 @@ function checkbuttonid(id) {
             var jsondata = {
               email: username,
               password: response[i].password,
-              try5date: updatelasttry,
+              gttry5date: updatelasttry,
             };
 
             var puttime = {
@@ -314,17 +289,17 @@ function checkbuttonid(id) {
             });
 
             if (
-              new Date(response[i].try1date).toDateString() ==
+              new Date(response[i].gttry1date).toDateString() ==
               updatelasttry.toDateString()
             ) {
-              /*If questions were answered on the same day, continue adding to the 5 question limit counter (numtrydone)*/
-              var tries = response[i].numtrydone;
+              /*If questions were answered on the same day, continue adding to the 5 question limit counter (gtnumtrydone)*/
+              var tries = response[i].gtnumtrydone;
               tries += 1;
 
               var jsondata = {
                 email: username,
                 password: response[i].password,
-                numtrydone: tries,
+                gtnumtrydone: tries,
               };
 
               var puttime = {
@@ -347,18 +322,18 @@ function checkbuttonid(id) {
                 console.log("Same Day");
               });
             } else if (
-              new Date(response[i].try1date).toDateString() !=
+              new Date(response[i].gttry1date).toDateString() !=
               updatelasttry.toDateString()
             ) {
-              /*If questions were answered on different days, update try1date, try5date and reset 5 question limit counter to 1 (numtrydone)*/
+              /*If questions were answered on different days, update gttry1date, gttry5date and reset 5 question limit counter to 1 (gtnumtrydone)*/
               alert(
                 "The day has been reset, the previous question will be counted as one of your tries for today!"
               );
               var jsondata = {
                 email: username,
                 password: response[i].password,
-                try1date: updatelasttry,
-                numtrydone: 1,
+                gttry1date: updatelasttry,
+                gtnumtrydone: 1,
               };
 
               var puttime = {
@@ -415,7 +390,7 @@ function checkbuttonid(id) {
         var username = localStorage.getItem("username");
         if (response[i].email == username) {
           usernum = i; /*Gets the user's account position*/
-          if (response[i].numtrydone >= 4) {
+          if (response[i].gtnumtrydone >= 4) {
             /*If it is the last try, bring back to homepage and deny entry*/
             alert("You have completed all your tries for today!");
             document.getElementById("MYanimation").innerHTML =
@@ -425,14 +400,14 @@ function checkbuttonid(id) {
               window.location.href = "http://127.0.0.1:5500/homepage.html";
             }
             var updatelasttry = new Date();
-            var tries = response[i].numtrydone;
+            var tries = response[i].gtnumtrydone;
             tries += 1;
 
             var jsondata = {
               email: username,
               password: response[i].password,
-              tryagain: updatelasttry,
-              numtrydone: tries,
+              gttryagain: updatelasttry,
+              gtnumtrydone: tries,
             };
 
             var puttime = {
@@ -452,8 +427,8 @@ function checkbuttonid(id) {
             };
 
             $.ajax(puttime).done(function (response) {});
-          } else if (4 > response[i].numtrydone >= 0) {
-            /*If the user has done/started the Character Trivia today, update try5date, compare try1date and try5date*/
+          } else if (4 > response[i].gtnumtrydone >= 0) {
+            /*If the user has done/started the Character Trivia today, update gttry5date, compare gttry1date and gttry5date*/
             document.getElementById("MYanimation").innerHTML =
               '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
             setTimeout(myURL, 5000);
@@ -465,7 +440,7 @@ function checkbuttonid(id) {
             var jsondata = {
               email: username,
               password: response[i].password,
-              try5date: updatelasttry,
+              gttry5date: updatelasttry,
             };
 
             var puttime = {
@@ -489,17 +464,17 @@ function checkbuttonid(id) {
             });
 
             if (
-              new Date(response[i].try1date).toDateString() ==
+              new Date(response[i].gttry1date).toDateString() ==
               updatelasttry.toDateString()
             ) {
-              /*If questions were answered on the same day, continue adding to the 5 question limit counter (numtrydone)*/
-              var tries = response[i].numtrydone;
+              /*If questions were answered on the same day, continue adding to the 5 question limit counter (gtnumtrydone)*/
+              var tries = response[i].gtnumtrydone;
               tries += 1;
 
               var jsondata = {
                 email: username,
                 password: response[i].password,
-                numtrydone: tries,
+                gtnumtrydone: tries,
               };
 
               var puttime = {
@@ -522,18 +497,18 @@ function checkbuttonid(id) {
                 console.log("Same Day");
               });
             } else if (
-              new Date(response[i].try1date).toDateString() !=
+              new Date(response[i].gttry1date).toDateString() !=
               updatelasttry.toDateString()
             ) {
-              /*If questions were answered on different days, update try1date, try5date and reset 5 question limit counter to 1 (numtrydone)*/
+              /*If questions were answered on different days, update gttry1date, gttry5date and reset 5 question limit counter to 1 (gtnumtrydone)*/
               alert(
                 "The day has been reset, the previous question will be counted as one of your tries for today!"
               );
               var jsondata = {
                 email: username,
                 password: response[i].password,
-                try1date: updatelasttry,
-                numtrydone: 1,
+                gttry1date: updatelasttry,
+                gtnumtrydone: 1,
               };
 
               var puttime = {
