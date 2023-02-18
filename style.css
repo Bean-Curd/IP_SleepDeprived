@@ -195,7 +195,7 @@
     z-index: -1; /*Moves the BG behind the buttons*/
 }
 
-/*CSS for character_trivia*/
+/*CSS for character_trivia and general_trivia*/
 
 .MYcdcont{ /*Countdown Timer Container*/
     display: flex; /*Center the box*/
