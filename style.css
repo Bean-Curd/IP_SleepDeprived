@@ -677,6 +677,127 @@
     background-color: #c5c0b0; /*Changes the color of the button when hovered over*/
 }
 
+/*Slimepedia Content*/
+
+.MYcontent{
+    display: flex; /*Center the buttons*/
+    align-items: center;
+    flex-direction: column;
+}
+
+.MYcontenttext{
+    border: none; /*Question Box format and style*/
+    border-radius: 20px;
+    height: auto; 
+    width: 30vw;
+    font-size: 20px;
+    margin-top: 20vh;
+    margin-right: 40vw;
+    z-index: 1;
+    color: #3e3c46;
+    background-color: #e2dfd6;
+    font-family: "HYWenHei-85W";
+    overflow: hidden;
+    text-align: center;
+}
+
+.MYcimg{
+    height: 70vh; 
+    width: 70vh;
+    margin-top: 10vh;
+    margin-left: 4vw;
+    position: absolute;
+}
+
+/*Slimepedia Content @media*/
+
+@media (max-width: 1500px) { /*For smaller screen widths*/   
+    .MYcimg{
+        height: 58vh; 
+        width: 58vh;
+        margin-top: 15vh;
+        margin-left: 4vw;
+        position: absolute;
+    }
+}
+
+@media (max-width: 1200px) { /*For smaller screen widths*/
+    .MYcimg{
+        height: 50vh; 
+        width: 50vh;
+        margin-top: 20vh;
+        margin-left: 4vw;
+        position: absolute;
+    }
+}
+
+@media (max-width: 1050px) { /*For smaller screen widths*/
+    .MYcimg{
+        height: 45vh; 
+        width: 45vh;
+        margin-top: 20vh;
+        margin-left: 4vw;
+        position: absolute;
+    }
+}
+
+@media (max-width: 950px) { /*For even smaller screen widths*/
+    .MYcimg{
+        height: 30vh; 
+        width: 30vh;
+        margin-top: 25vh;
+        margin-left: 4vw;
+        position: absolute;
+    }
+}
+
+@media (max-width: 730px) { /*For even even smaller screen widths*/
+    .MYbook{ /*Book BG*/
+        display: block;
+        object-position: -15vw;
+        width: 220%;
+        height: 100%;
+        position: fixed; /*Prevents the BG from being scrolled*/
+        z-index: -1; /*Moves the BG behind the buttons*/
+    }
+    .MYcontenttext{
+        width: 80vw;
+        font-size: 14px;
+        margin-top: 50vh;
+        margin-right: 0vw;
+    }
+    .MYcimg{
+        height: 58vh; 
+        width: 58vh;
+        margin-top: -3vh;
+        margin-left: -30vw;
+        position: absolute;
+    }
+}
+
+@media (max-width: 500px) { /*For even even even smaller screen widths*/
+    .MYcimg{
+        height: 42vh; 
+        width: 42vh;
+        margin-top: -3vh;
+        margin-left: -40vw;
+        position: absolute;
+    }
+}
+
+@media (max-width: 350px) { /*For even even even even smaller screen widths*/
+    .MYcontenttext{
+        margin-top: 35vh;
+    }
+    .MYcimg{
+        height: 38vh; 
+        width: 38vh;
+        margin-top: -3vh;
+        margin-left: -40vw;
+        position: absolute;
+    }
+}
+
 /*Slimepedia page @media*/
 
 @media (max-width: 1500px) { /*For smaller screen widths*/
