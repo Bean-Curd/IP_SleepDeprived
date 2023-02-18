@@ -2,7 +2,7 @@
 const APIKEY = "63ee3468478852088da68361"; //The demo one
 // const APIKEY = "63eed80f478852088da6838f"; //The demo two
 
-/*Character Questions List*/
+/*Genshin Questions List*/
 
 var list = `
 What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Parent and Child(They aren't related
@@ -106,6 +106,7 @@ What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Pa
 /How many primogems can you obatin from daily commissions and claiming from Katheryne?(60(40(80(20
 /How many locations can the Unusual Hilichurl appear?(14(9(7(16
 `;
+
 /*Tried to read the file -> Require not defined error*/
 
 // const fs = require('fs'); /*To read the Character_Array file*/
@@ -119,24 +120,24 @@ What is the relationship between Shenhe and Chongyun?(Aunt and Nephew(Sibings(Pa
 // }
 
 var username = localStorage.getItem("username");
-var chara = list.split("#"); /*Split the Character Array*/
+var chara = list.split("/"); /*Split the Questions*/
 
-var vqns = chara[0].split("/"); /*Split by Questions*/
-var zqns = chara[1].split("/");
-var rqns = chara[2].split("/");
-var nqns = chara[3].split("/");
+// var vqns = chara[0].split("/"); /*Split by Questions*/
+// var zqns = chara[1].split("/");
+// var rqns = chara[2].split("/");
+// var nqns = chara[3].split("/");
 
-var storagename = username;
+// var storagename = username;
 
-const chara_array = [vqns, zqns, rqns, nqns]; /*Array for different characters*/
+// const chara_array = [vqns, zqns, rqns, nqns]; /*Array for different characters*/
 
-var charanum = Math.floor(Math.random() * 4); /*Random character*/
-storagename += charanum;
+// var charanum = Math.floor(Math.random() * 4); /*Random character*/
+// storagename += charanum;
 
 var qnnum = Math.floor(Math.random() * 20); /*Random question number*/
-storagename += qnnum;
+// storagename += qnnum;
 
-var qn;
+// var qn;
 
 for (var i = 0; i < chara_array[charanum].length; i++) {
   /*Calls the randomized question*/
@@ -200,11 +201,6 @@ function countdown() {
   }
 }
 
-/*If the help button is pressed*/
-document.getElementById("MYhelp").onclick = () => {
-  checkbuttonid(6);
-};
-
 /*If the button is pressed:*/
 document.getElementById("MYopt1").onclick = () => {
   checkbuttonid(1);
@@ -223,38 +219,6 @@ function checkbuttonid(id) {
   if (id == correct) {
     /*When the correct option is clicked*/
     alert("The Answer is correct!");
-    if (localStorage.getItem(storagename)[0] == 0) {
-      /*If the question saved is 0,0 -> has not been answered correctly before, change to 1,1*/
-      localStorage.setItem(storagename, [1, 1]);
-    } else if (localStorage.getItem(storagename)[0] == 1) {
-      alert("You have answered this question before! You get 2 Primogems!");
-      /*Increase Primogem Number*/
-      var username = localStorage.getItem("username");
-      var userprimo = username;
-
-      userprimo += "primo";
-      // localStorage.setItem(userprimo, 450); /*For Testing*/
-
-      if (localStorage.getItem(userprimo) == null) {
-        /*If the user has no primogems, create one with 0*/
-        localStorage.setItem(userprimo, 0);
-      } else if (localStorage.getItem(userprimo) != null) {
-        var primonum = parseInt(localStorage.getItem(userprimo));
-        primonum += 2;
-        localStorage.setItem(
-          userprimo,
-          primonum
-        ); /*To call Primogem Number in script.js*/
-      }
-      var storearray = localStorage
-        .getItem(storagename)
-        .split(","); /*So the comma does not affect the position*/
-      var counter = parseInt(
-        storearray[1]
-      ); /*If the question has been answered correctly before -> increase the 2nd one by 1 */ /*parseInt -> make sure it is an integer*/
-      localStorage.setItem(storagename, [1, counter + 1]);
-    }
-
     var usernum;
     let gettime = {
       async: true,
@@ -417,82 +381,6 @@ function checkbuttonid(id) {
                 console.log("Different Day");
               });
             }
-          }
-        }
-      }
-    });
-  } else if (id == 6) {
-    /*If the help button is used*/
-    console.log("Help Clicked");
-    var usernum;
-    let gettime = {
-      async: true,
-      crossDomain: true,
-      // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
-      url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
-      // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": APIKEY,
-        "cache-control": "no-cache",
-      },
-    };
-
-    $.ajax(gettime).done(function (response) {
-      for (var i = 0; i < response.length; i++) {
-        /*Looks for the user's account*/
-        var username = localStorage.getItem("username");
-        if (response[i].email == username) {
-          usernum = i; /*Gets the user's account position*/
-          var updatelasttry = new Date();
-          if (
-            new Date(response[i].helpbtn).toDateString() !=
-            updatelasttry.toDateString()
-          ) {
-            /*If the help button has not been pressed today*/
-            document.getElementById("MYanimation").innerHTML =
-              '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
-            setTimeout(myURL, 5000);
-            function myURL() {
-              window.location.href = "http://127.0.0.1:5500/ask_help.html";
-            }
-            var tries = response[i].numtrydone;
-            tries += 1;
-
-            var jsondata = {
-              email: username,
-              password: response[i].password,
-              numtrydone: tries,
-              try5date: updatelasttry,
-              helpbtn: updatelasttry,
-            };
-
-            var puttime = {
-              async: true,
-              crossDomain: true,
-              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
-              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
-              method: "PUT",
-              headers: {
-                "content-type": "application/json",
-                "x-apikey": APIKEY,
-                "cache-control": "no-cache",
-              },
-              processData: false,
-              data: JSON.stringify(jsondata),
-            };
-
-            $.ajax(puttime).done(function (response) {
-              console.log("Help Used");
-            });
-          } else if (
-            new Date(response[i].helpbtn).toDateString() ==
-            updatelasttry.toDateString()
-          ) {
-            /*If button was used today*/
-            alert("The button has already been used today!");
           }
         }
       }
