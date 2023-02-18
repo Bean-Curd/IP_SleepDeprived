@@ -241,7 +241,7 @@ for (var i = 1; i <= 4; i++) {
 }
 
 /*30 Second GTCountdown for Questions*/
-var seconds = 3000;
+var seconds = 30;
 var cd = document.getElementById("GTCountdown");
 
 var timer = setInterval(countdown, 1000);
