@@ -168,7 +168,7 @@ for (var i = 1; i <= 4; i++) {
 }
 
 /*30 Second Countdown for Questions*/
-var seconds = 10;
+var seconds = 30;
 var cd = document.getElementById("Countdown");
 
 var timer = setInterval(countdown, 1000);
