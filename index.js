@@ -34,7 +34,7 @@ const clicklogin = (event) => {
     if (check) {
       /*Plays the Lottie Animation*/
       $("#MYanimation").html(
-        '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; margin-top: -25vh; margin-left: -60vw; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>'
+        '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; margin-top: -15vh; margin-left: -50vw; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>'
       );
       setTimeout(myURL, 3000);
       function myURL() {
