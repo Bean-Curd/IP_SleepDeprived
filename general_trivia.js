@@ -253,7 +253,7 @@ function checkbuttonid(id) {
 
             $.ajax(puttime).done(function (response) {});
           } else if (4 > response[i].gtnumtrydone >= 0) {
-            /*If the user has done/started the Character Trivia today, update gttry5date, compare gttry1date and gttry5date*/
+            /*If the user has done/started the General Trivia today, update gttry5date, compare gttry1date and gttry5date*/
             document.getElementById("MYanimation").innerHTML =
               '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
             setTimeout(myURL, 5000);
@@ -428,7 +428,7 @@ function checkbuttonid(id) {
 
             $.ajax(puttime).done(function (response) {});
           } else if (4 > response[i].gtnumtrydone >= 0) {
-            /*If the user has done/started the Character Trivia today, update gttry5date, compare gttry1date and gttry5date*/
+            /*If the user has done/started the General Trivia today, update gttry5date, compare gttry1date and gttry5date*/
             document.getElementById("MYanimation").innerHTML =
               '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
             setTimeout(myURL, 5000);
