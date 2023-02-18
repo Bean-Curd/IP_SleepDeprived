@@ -160,6 +160,7 @@ document.getElementById("MYbtn2").onclick = () => {
             gttry1date: try1,
             gttry5date: try1,
             gttryagain: try1,
+            numwrong: 0,
           };
           var puttime = {
             async: true,
@@ -213,6 +214,7 @@ document.getElementById("MYbtn2").onclick = () => {
               gttry5date: try1,
               gttryagain: try1,
               gtnumtrydone: 0,
+              numwrong: 0,
             };
 
             var puttime = {
