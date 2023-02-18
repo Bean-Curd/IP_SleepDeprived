@@ -1,5 +1,6 @@
 <h2>IP SleepDeprived Slimepedia Website</h2>
 
+GitHub Link: https://bean-curd.github.io/IP_SleepDeprived/
 A Genshin website that allows users to collect Genshin characters as slimes. Players answer trivia questions to unlock new information on the characters, and get rewards.
 
 <h2>Design Process</h2>
