@@ -1,7 +1,7 @@
 
 @font-face{ /*Font for website*/
     font-family: "HYWenHei-85W";
-    src: url("../Genshin-Impact-Font/zh-cn.ttf")
+    src: url("./Genshin-Impact-Font/zh-cn.ttf")
 }
 
 /*CSS for login*/
