@@ -131,6 +131,8 @@ document.getElementById("MYbtn1").onclick = () => {
 
 /*General Trivia*/
 document.getElementById("MYbtn2").onclick = () => {
+  var chara = Math.floor(Math.random() * 4); /*Random character*/
+  localStorage.setItem("chara", parseInt(chara));
   let gettime = {
     async: true,
     crossDomain: true,

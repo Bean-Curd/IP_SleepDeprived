@@ -83,7 +83,7 @@ var list = `What is the relationship between Shenhe and Chongyun?(Aunt and Nephe
 /What is the initial resin cap?(120(80(200(160
 /What was the first co-op event?(Elemental Crucible(Windtrace(Unreconciled Stars(Theater Mechanicus
 /Which element is most suitable to destory a Consecrated Red Vulture's Phagocytic Energy Block?(Pyro(Electro(Hydro(Cryo
-/What happens after the infused form of an Eremite ends(They enter a weakened state?(They lose HP(They deal AOE damage(They call reinforcments
+/What happens after the infused form of an Eremite ends?(They enter a weakened state(They lose HP(They deal AOE damage(They call reinforcments
 /What is the maximum number of companions you can put in the Serenitea Pot?(8(10(12(5
 /How many realm layouts are available in the Serenitea Pot?(5(3(4(6
 /Which character can refund materials when crafting furniture?(Yoimiya(Sayu(Albedo(Layla
@@ -118,6 +118,86 @@ var list = `What is the relationship between Shenhe and Chongyun?(Aunt and Nephe
 //     console.log("Ohno")
 // }
 
+/*Randomise Characters*/
+var specificchara = localStorage.getItem("chara"); /*Get random character*/
+var specificimg = "";
+var specificnum = " 4";
+
+if (specificchara == 1) {
+  specificimg = "Venti/Venti";
+} else if (specificchara == 2) {
+  specificimg = "Zhongli/Zhongli";
+} else if (specificchara == 3) {
+  specificimg = "Raiden/Raiden";
+} else if (specificchara == 4) {
+  specificimg = "Nahida/Nahida";
+}
+
+/*Display HP + DMG*/
+var usernum;
+let gettime = {
+  async: true,
+  crossDomain: true,
+  // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+  url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
+  // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+    "x-apikey": APIKEY,
+    "cache-control": "no-cache",
+  },
+};
+
+$.ajax(gettime).done(function (response) {
+  for (var i = 0; i < response.length; i++) {
+    /*Looks for the user's account*/
+    if (response[i].email == username) {
+      usernum = i; /*Gets the user's account position*/
+      if (response[i].numwrong == 1) {
+        console.log("3HP");
+        specificnum = " 3";
+        document.getElementById("4thHP").innerHTML =
+          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
+        document.getElementById("CharaBlob").innerHTML =
+          '<img src="./Artworks/' +
+          specificimg +
+          specificnum +
+          'HP.png" id="MYCBlob" alt="oop" />';
+      }
+      if (response[i].numwrong == 2) {
+        console.log("2HP");
+        specificnum = " 2";
+        document.getElementById("4thHP").innerHTML =
+          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
+        document.getElementById("3rdHP").innerHTML =
+          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP3" alt="oop" />';
+        document.getElementById("CharaBlob").innerHTML =
+          '<img src="./Artworks/' +
+          specificimg +
+          specificnum +
+          'HP.png" id="MYCBlob" alt="oop" />';
+      }
+      if (response[i].numwrong == 3) {
+        console.log("1HP");
+        specificnum = " 1";
+        document.getElementById("4thHP").innerHTML =
+          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
+        document.getElementById("3rdHP").innerHTML =
+          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP3" alt="oop" />';
+        document.getElementById("2ndHP").innerHTML =
+          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP2" alt="oop" />';
+        document.getElementById("CharaBlob").innerHTML =
+          '<img src="./Artworks/' +
+          specificimg +
+          specificnum +
+          'HP.png" id="MYCBlob" alt="oop" />';
+      }
+    }
+  }
+});
+
+/*Start*/
 var username = localStorage.getItem("username");
 var qns = list.split("/"); /*Split the Questions*/
 
@@ -161,7 +241,7 @@ for (var i = 1; i <= 4; i++) {
 }
 
 /*30 Second GTCountdown for Questions*/
-var seconds = 30000;
+var seconds = 3000;
 var cd = document.getElementById("GTCountdown");
 
 var timer = setInterval(countdown, 1000);
@@ -385,22 +465,63 @@ function checkbuttonid(id) {
     };
 
     $.ajax(gettime).done(function (response) {
+      alert("You've lost 1 HP!");
       for (var i = 0; i < response.length; i++) {
         /*Looks for the user's account*/
         var username = localStorage.getItem("username");
         if (response[i].email == username) {
           usernum = i; /*Gets the user's account position*/
-          if (response[i].gtnumtrydone >= 4) {
+          if (response[i].numwrong >= 3) {
+            /*If out of HP*/
+            alert("You've run out of HP!");
+            document.getElementById("MYanimation").innerHTML =
+              '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
+            setTimeout(myURL, 5000);
+            function myURL() {
+              window.location.href = "http://127.0.0.1:5500/lose.html";
+            }
+            var wrong = response[i].numwrong;
+            var tries = 5;
+            wrong += 1;
+
+            var jsondata = {
+              email: username,
+              password: response[i].password,
+              gttryagain: updatelasttry,
+              gtnumtrydone: tries,
+              numwrong: wrong,
+            };
+
+            var puttime = {
+              async: true,
+              crossDomain: true,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
+              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache",
+              },
+              processData: false,
+              data: JSON.stringify(jsondata),
+            };
+
+            $.ajax(puttime).done(function (response) {});
+          } else if (response[i].gtnumtrydone >= 4) {
             /*If it is the last try, bring back to homepage and deny entry*/
             alert("You have completed all your tries for today!");
             document.getElementById("MYanimation").innerHTML =
               '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
             setTimeout(myURL, 5000);
             function myURL() {
-              window.location.href = "http://127.0.0.1:5500/homepage.html";
+              window.location.href = "http://127.0.0.1:5500/win.html";
             }
             var updatelasttry = new Date();
             var tries = response[i].gtnumtrydone;
+            var wrong = response[i].numwrong;
+            wrong += 1;
             tries += 1;
 
             var jsondata = {
@@ -408,6 +529,7 @@ function checkbuttonid(id) {
               password: response[i].password,
               gttryagain: updatelasttry,
               gtnumtrydone: tries,
+              numwrong: wrong,
             };
 
             var puttime = {
@@ -436,11 +558,14 @@ function checkbuttonid(id) {
               window.location.reload(true);
             }
             var updatelasttry = new Date();
+            var wrong = response[i].numwrong;
+            wrong += 1;
 
             var jsondata = {
               email: username,
               password: response[i].password,
               gttry5date: updatelasttry,
+              numwrong: wrong,
             };
 
             var puttime = {
@@ -502,13 +627,14 @@ function checkbuttonid(id) {
             ) {
               /*If questions were answered on different days, update gttry1date, gttry5date and reset 5 question limit counter to 1 (gtnumtrydone)*/
               alert(
-                "The day has been reset, the previous question will be counted as one of your tries for today!"
+                "The day has been reset, the previous question will be counted as one of your tries for today and your previous questions' rewards will be removed!"
               );
               var jsondata = {
                 email: username,
                 password: response[i].password,
                 gttry1date: updatelasttry,
                 gtnumtrydone: 1,
+                numwrong: 1,
               };
 
               var puttime = {
