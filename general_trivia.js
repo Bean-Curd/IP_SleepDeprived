@@ -302,7 +302,7 @@ function checkbuttonid(id) {
               '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gbfwtkzw.json" background="#3E3C46" speed="1.5" style="position: fixed; z-index: 5; width: 100vw; height: 100vh; overflow: hidden" loop autoplay></lottie-player>';
             setTimeout(myURL, 5000);
             function myURL() {
-              window.location.href = "http://127.0.0.1:5500/homepage.html";
+              window.location.href = "http://127.0.0.1:5500/win.html";
             }
             var updatelasttry = new Date();
             var tries = response[i].gtnumtrydone;
