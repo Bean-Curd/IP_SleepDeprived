@@ -154,6 +154,15 @@ $.ajax(gettime).done(function (response) {
     /*Looks for the user's account*/
     if (response[i].email == username) {
       usernum = i; /*Gets the user's account position*/
+      if (response[i].numwrong == 0) {
+        console.log("4HP");
+        specificnum = "_4";
+        document.getElementById("CharaBlob").innerHTML =
+          '<img src="./Artworks/' +
+          specificimg +
+          specificnum +
+          'HP.png" id="MYCBlob" alt="oop" />';
+      }
       if (response[i].numwrong == 1) {
         console.log("3HP");
         specificnum = "_3";
