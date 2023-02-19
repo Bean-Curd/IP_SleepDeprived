@@ -1,13 +1,13 @@
 var specificchara = localStorage.getItem("chara"); /*Get random character*/
 var specificimg = "";
 
-if (specificchara == 1) {
+if (specificchara == 0) {
   specificimg = "Venti/Venti";
-} else if (specificchara == 2) {
+} else if (specificchara == 1) {
   specificimg = "Zhongli/Zhongli";
-} else if (specificchara == 3) {
+} else if (specificchara == 2) {
   specificimg = "Raiden/Raiden";
-} else if (specificchara == 4) {
+} else if (specificchara == 3) {
   specificimg = "Nahida/Nahida";
 }
 
