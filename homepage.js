@@ -253,3 +253,7 @@ document.getElementById("MYbtn2").onclick = () => {
     }
   });
 };
+
+document.getElementById("MYbtn3").onclick = () => {
+  window.location.href = "http://127.0.0.1:5500/slimepedia.html";
+};
