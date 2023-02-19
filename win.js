@@ -41,7 +41,7 @@ $.ajax(gettime).done(function (response) {
 
         document.getElementById("Charawin").innerHTML =
           /*Put Img*/
-          '<img src="./Artworks/Chests/Luxurious Chest.png" id="MYwin" alt="oop" />';
+          '<img src="./Artworks/Chests/Luxurious_Chest.png" id="MYwin" alt="oop" />';
         setTimeout(myalert, 1000);
         function myalert() {
           alert("You get 20 Primogems!");
@@ -54,7 +54,7 @@ $.ajax(gettime).done(function (response) {
         localStorage.setItem(userprimo, primonum);
         document.getElementById("Charawin").innerHTML =
           /*Put Img*/
-          '<img src="./Artworks/Chests/Precious Chest.png" id="MYwin" alt="oop" />';
+          '<img src="./Artworks/Chests/Precious_Chest.png" id="MYwin" alt="oop" />';
         setTimeout(myalert, 1000);
         function myalert() {
           alert("You get 10 Primogems!");
@@ -67,7 +67,7 @@ $.ajax(gettime).done(function (response) {
         localStorage.setItem(userprimo, primonum);
         document.getElementById("Charawin").innerHTML =
           /*Put Img*/
-          '<img src="./Artworks/Chests/Exquisite Chest.png" id="MYwin" alt="oop" />';
+          '<img src="./Artworks/Chests/Exquisite_Chest.png" id="MYwin" alt="oop" />';
         setTimeout(myalert, 1000);
         function myalert() {
           alert("You get 5 Primogems!");
@@ -80,7 +80,7 @@ $.ajax(gettime).done(function (response) {
         localStorage.setItem(userprimo, primonum);
         document.getElementById("Charawin").innerHTML =
           /*Put Img*/
-          '<img src="./Artworks/Chests/Common Chest.png" id="MYwin" alt="oop" />';
+          '<img src="./Artworks/Chests/Common_Chest.png" id="MYwin" alt="oop" />';
         setTimeout(myalert, 1000);
         function myalert() {
           alert("You get 2 Primogems!");

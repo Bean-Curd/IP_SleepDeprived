@@ -13,7 +13,7 @@ if (specificchara == 1) {
 
 document.getElementById("Charalose").innerHTML =
   /*Put Img*/
-  '<img src="./Artworks/' + specificimg + ' 0HP.png" id="MYlose" alt="oop" />';
+  '<img src="./Artworks/' + specificimg + '_0HP.png" id="MYlose" alt="oop" />';
 
 document.getElementById("MYreturn").onclick = () => {
   window.location.href = "http://127.0.0.1:5500/homepage.html";

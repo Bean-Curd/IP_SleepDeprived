@@ -158,7 +158,7 @@ $.ajax(gettime).done(function (response) {
         console.log("3HP");
         specificnum = " 3";
         document.getElementById("4thHP").innerHTML =
-          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
+          '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
         document.getElementById("CharaBlob").innerHTML =
           '<img src="./Artworks/' +
           specificimg +
@@ -169,9 +169,9 @@ $.ajax(gettime).done(function (response) {
         console.log("2HP");
         specificnum = " 2";
         document.getElementById("4thHP").innerHTML =
-          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
+          '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
         document.getElementById("3rdHP").innerHTML =
-          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP3" alt="oop" />';
+          '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP3" alt="oop" />';
         document.getElementById("CharaBlob").innerHTML =
           '<img src="./Artworks/' +
           specificimg +
@@ -182,11 +182,11 @@ $.ajax(gettime).done(function (response) {
         console.log("1HP");
         specificnum = " 1";
         document.getElementById("4thHP").innerHTML =
-          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
+          '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
         document.getElementById("3rdHP").innerHTML =
-          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP3" alt="oop" />';
+          '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP3" alt="oop" />';
         document.getElementById("2ndHP").innerHTML =
-          '<img src="./Artworks/Other Assets/Heart_Hollow.png" id="MYHP2" alt="oop" />';
+          '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP2" alt="oop" />';
         document.getElementById("CharaBlob").innerHTML =
           '<img src="./Artworks/' +
           specificimg +
