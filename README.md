@@ -24,7 +24,7 @@ The Slimepedia website would consist of:
 3. A profile button for users to access the shop and sign out
 4. A shop section for users to see their Primogems and convert them over to their Genshin Accounts
 5. A Character Trivia page to display Character Questions and buttons with their answers, a 30 second countdown timer for the questions and a help button for users to give the question they are struggling with to another user
-6. A Genshin Trivia page to display general Genshin Questions and buttons wth their answers, a 30 second countdown timer for the question and display of the user's unlocked character <strong>(If a favourite character has not been selected, a random character is chosen)</strong>
+6. A Genshin Trivia page to display general Genshin Questions and buttons wth their answers, a 30 second countdown timer for the question and display of the user's unlocked character (If a favourite character has not been selected, a random character is chosen)
 7. A Slimepedia page for the user to see the image of the character, information unlocked of the character and the 3D model of the character
 
 Future Features:
@@ -94,7 +94,6 @@ If it still does not the database fields are shown in the screenshot under Datab
    <li>Test that it no longer lets you in on the same day</li>
 
 <h4>Harder parts to test:</h4>
-
    <li>Test that if a question is answered correctly for the second time, an alert would appear saying you have answered this question before and get 2 Primogems, and the question in inspect -> application changes from email+question number | 1,1 to email+question number | 1,2 and the primonum in inspect -> application increaes by 2</li>
    <li>Test that if a question is answered on the day after the quiz is started, that question counts as the 1st try of the next day</li>
    <li>Test that if the help button is used for the last question of the day it sends you to the homepage and no longer lets you in for the day</li>
@@ -102,19 +101,24 @@ If it still does not the database fields are shown in the screenshot under Datab
 <h3>Genshin Trivia page:</h3>
    <li>You should see a HP bar with 4 HP, a randomized character and a hilichurl, a 30 second timer, a question and 4 options(There are 5 tries a day, it might be easier testing with your own database so you can reset the tries)</li>
    <li>Test that a alert pops up saying that time is up when the countdown ends, this is counted as a wrong answer</li>
-   <li>Test that a alert pops up saying that the answer is wrong when a wrong answer is clicked</li>
-   <li>Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo)</li>
-
-   <li>Test that the help button brings you to the Ask Help Page and that the Ok button brings you back to the Character Trivia Page, this counts as a try for today</li>
-   <li>Test that the help button no longer works in the same day</li>
-   <li>Test that when 5 tries are up it returns you to the Homepage</li>
+   <li>Test that a alert pops up saying that the answer is wrong when a wrong answer is clicked, when it reloads you should have 1 less HP and your character takes more damage</li>
+   <li>Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo), an alert says you answered correctly</li>
+   <li>Test that when 5 tries are up it sends you to the Win page or Lose page -> Lose when you run out of HP, Win if you have not</li>
+   <li>The Lose page should show You Lose! with the random character and a return button which returns you to the Homepage</li>
+   <li>The Win page should show You Win! with a chest correlating to how many questions you got correct (5 -> Luxurious Chest [White and Gold], 4 -> Precious Chest [Gold], 3 -> Exquisite Chest [Metal and Wood], 2 -> Common Chest [Wood]). An alert should pop up saying how many primogems you get from the chest (20, 10, 5, 2 respectively) and a return button which returns you to the Homepage
+   
+   *The chest and alert might take a bit to load</li>
+   <li>Check that the primonum in inspect -> application has increased</li>
    <li>Test that it no longer lets you in on the same day</li>
 
 <h4>Harder parts to test:</h4>
+   <li>Getting the different chests in line 109</li>
 
-   <li>Test that if a question is answered correctly for the second time, an alert would appear saying you have answered this question before and get 2 Primogems, and the question in inspect -> application changes from email+question number | 1,1 to email+question number | 1,2 and the primonum in inspect -> application increaes by 2</li>
-   <li>Test that if a question is answered on the day after the quiz is started, that question counts as the 1st try of the next day</li>
-   <li>Test that if the help button is used for the last question of the day it sends you to the homepage and no longer lets you in for the day</li>
+<h3>Slimepedia Page</h3>
+   <li>You should see 4 characters button</li>
+
+<h3>Slimepedia N/R/V/Z Pages</h3>
+   <li>You should see the character image and some general information of the character</li>
 
 <h2>Credits</h2>
 
