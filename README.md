@@ -90,7 +90,12 @@ If it still does not the database fields are shown in the screenshot under Datab
    <li>v. Test that the help button brings you to the Ask Help Page and that the Ok button brings you back to the Character Trivia Page, this counts as a try for today</li>
    <li>vi. Test that the help button no longer works in the same day</li>
    <li>vii. Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo), the question in inspect -> application changes from email+question number | 0,0 to email+question number | 1,1</li>
-   <li>viii. Test that if a question is answered correctly for the second time, an alert would appear saying you have answered this question before and get 2 Primogems, and the question in inspect -> application changes from email+question number | 1,1 to email+question number | 1,2 and the primonum in inspect -> application increaes by 2</li>
+   <li>viii. Test that when 5 tries are up it returns you to the Homepage</li>
+   <li>ix. Test that it no longer lets you in on the same day</li>
+
+   Harder parts to test:
+   <li>Test that if a question is answered correctly for the second time, an alert would appear saying you have answered this question before and get 2 Primogems, and the question in inspect -> application changes from email+question number | 1,1 to email+question number | 1,2 and the primonum in inspect -> application increaes by 2</li>
+   <li>ix. Test that if a question is answered on the day after the quiz is started</li>
 
 <h2>Credits</h2>
 
