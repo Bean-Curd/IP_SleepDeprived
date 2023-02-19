@@ -121,7 +121,7 @@ var list = `What is the relationship between Shenhe and Chongyun?(Aunt and Nephe
 /*Randomise Characters*/
 var specificchara = localStorage.getItem("chara"); /*Get random character*/
 var specificimg = "";
-var specificnum = " 4";
+var specificnum = "_4";
 
 if (specificchara == 1) {
   specificimg = "Venti/Venti";
@@ -156,7 +156,7 @@ $.ajax(gettime).done(function (response) {
       usernum = i; /*Gets the user's account position*/
       if (response[i].numwrong == 1) {
         console.log("3HP");
-        specificnum = " 3";
+        specificnum = "_3";
         document.getElementById("4thHP").innerHTML =
           '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
         document.getElementById("CharaBlob").innerHTML =
@@ -167,7 +167,7 @@ $.ajax(gettime).done(function (response) {
       }
       if (response[i].numwrong == 2) {
         console.log("2HP");
-        specificnum = " 2";
+        specificnum = "_2";
         document.getElementById("4thHP").innerHTML =
           '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
         document.getElementById("3rdHP").innerHTML =
@@ -180,7 +180,7 @@ $.ajax(gettime).done(function (response) {
       }
       if (response[i].numwrong == 3) {
         console.log("1HP");
-        specificnum = " 1";
+        specificnum = "_1";
         document.getElementById("4thHP").innerHTML =
           '<img src="./Artworks/Other_Assets/Heart_Hollow.png" id="MYHP4" alt="oop" />';
         document.getElementById("3rdHP").innerHTML =
