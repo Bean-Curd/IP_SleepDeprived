@@ -1,6 +1,6 @@
-const APIKEY = "63e531fa478852088da67f67";
+// const APIKEY = "63e531fa478852088da67f67";
 // const APIKEY = "63ee3468478852088da68361"; //The demo one
-// const APIKEY = "63eed80f478852088da6838f"; //The demo two
+const APIKEY = "63eed80f478852088da6838f"; //The demo two
 
 /*Genshin Questions List*/
 
@@ -68,7 +68,7 @@ var list = `What is the relationship between Shenhe and Chongyun?(Aunt and Nephe
 /The Thunder Manifestation is a remnant of a late guardian of Tsurumi Island. What is the guardian's name?(Kanna Kapatcir(Thunder Manifestation(Metis(Eurynome
 /What is Timmie's imaginary friend?(A Ruin Guard(He has none(Pigeons(A Ruin Drake
 /What is the codename for the Sustainer of Heavenly Principles as noted in the game files?(Asmoday(Absinthe(Alice(Asbestos
-/Where is the Adventurers' Guild's main headquarters located?(Snezhnaya(Mondstadt(Fontaine(Netlan
+/Where is the Adventurers' Guild's main headquarters located?(Snezhnaya(Mondstadt(Fontaine(Natlan
 /What species inhabited Teyvat before humans?(Vishaps(Hilichurls(Archons(Other animals
 /How many commisions are available daily?(4(2(5(10
 /How many characters are playable as of Version 3.4?(62(75(68(67
@@ -138,9 +138,9 @@ var usernum;
 let gettime = {
   async: true,
   crossDomain: true,
-  url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+  // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
   // url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
-  // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
+  url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
   method: "GET",
   headers: {
     "content-type": "application/json",
@@ -287,9 +287,9 @@ function checkbuttonid(id) {
     let gettime = {
       async: true,
       crossDomain: true,
-      url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+      // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
       // url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
-      // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
+      url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -327,9 +327,9 @@ function checkbuttonid(id) {
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
               // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+              url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -360,9 +360,9 @@ function checkbuttonid(id) {
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
               // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+              url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -394,9 +394,9 @@ function checkbuttonid(id) {
               var puttime = {
                 async: true,
                 crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
                 // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-                // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+                url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
                 method: "PUT",
                 headers: {
                   "content-type": "application/json",
@@ -428,9 +428,9 @@ function checkbuttonid(id) {
               var puttime = {
                 async: true,
                 crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
                 // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-                // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+                url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
                 method: "PUT",
                 headers: {
                   "content-type": "application/json",
@@ -462,9 +462,9 @@ function checkbuttonid(id) {
     let gettime = {
       async: true,
       crossDomain: true,
-      url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
+      // url: "https://ipaccountinfos-e395.restdb.io/rest/accounts",
       // url: "https://tempip-8a29.restdb.io/rest/accounts", //The demo one
-      // url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
+      url: "https://temp2ip-d88b.restdb.io/rest/accounts", //The demo two
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -504,9 +504,9 @@ function checkbuttonid(id) {
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
               // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+              url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -544,9 +544,9 @@ function checkbuttonid(id) {
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
               // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+              url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -580,9 +580,9 @@ function checkbuttonid(id) {
             var puttime = {
               async: true,
               crossDomain: true,
-              url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+              // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
               // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-              // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+              url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -614,9 +614,9 @@ function checkbuttonid(id) {
               var puttime = {
                 async: true,
                 crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
                 // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-                // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+                url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
                 method: "PUT",
                 headers: {
                   "content-type": "application/json",
@@ -649,9 +649,9 @@ function checkbuttonid(id) {
               var puttime = {
                 async: true,
                 crossDomain: true,
-                url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
+                // url: `https://ipaccountinfos-e395.restdb.io/rest/accounts/${response[i]._id}`,
                 // url: `https://tempip-8a29.restdb.io/rest/accounts/${response[i]._id}`, //The demo one
-                // url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
+                url: `https://temp2ip-d88b.restdb.io/rest/accounts/${response[i]._id}`, //The demo two
                 method: "PUT",
                 headers: {
                   "content-type": "application/json",
