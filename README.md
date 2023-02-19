@@ -62,55 +62,55 @@ const APIKEY = "63ee3468478852088da68361"; //The demo one
 
 If it still does not the database fields are shown in the screenshot under Database_Fields_Screenshot
 
-<ul>Login page:</ul>
-   <li>i. Start from index.html (The main account is Test1@gmail.com, Test1 -> Each resddb database has 5 accounts: Test1@gmail.com, Test1; Test2@gmail.com, Test2; Test3@gmail.com, Test3; Test4@gmail.com, Test4; Test5@gmail.com, Test5)(All accounts start with 0 tries)</li>
-   <li>ii. Try to submit an empty form and an error message should appear</li>
-   <li>iii. Try to submit an invalid email (without @ + anything after) and upon hover a message should appear telling you to fill it out</li>
-   <li>iv. Try entering the email and password without capitial letters and it should still be wrong</li>
-   <li>v. Submit the correct account and a loading animation should play and bring you to the homepage</li>
+<h3>Login page:</h3>
+   <li>Start from index.html (The main account is Test1@gmail.com, Test1 -> Each resddb database has 5 accounts: Test1@gmail.com, Test1; Test2@gmail.com, Test2; Test3@gmail.com, Test3; Test4@gmail.com, Test4; Test5@gmail.com, Test5)(All accounts start with 0 tries)</li>
+   <li>Try to submit an empty form and an error message should appear</li>
+   <li>Try to submit an invalid email (without @ + anything after) and upon hover a message should appear telling you to fill it out</li>
+   <li>Try entering the email and password without capitial letters and it should still be wrong</li>
+   <li>Submit the correct account and a loading animation should play and bring you to the homepage</li>
 
-<ul>Homepage:</ul>
+<h3>Homepage:</h3>
    <li>Tap the top right Profile icon to go to the Profile Page</li>
    <li>Tap the Character Trivia to go to the Character Trivia Page</li>
    <li>Tap the Genshin Trivia to go to the General Trivia Page</li>
    <li>Tap the Slimepedia to go to the Slimepedia Page</li>
 
-<ul>Profile page:</ul>
-   <li>i. Test that the back arrow in the top left brings you back to the Homepage</li>
-   <li>ii. Check that a primo count has been created under inspect -> application as email+primo | 0  </li>
-   <li>iii. Test that the 1st button alerts that the Primogems have been converted if you have enough (There is a code in profile.js line 9 to add 450 Primogems)</li>
-   <li>iv. Test that the 1st button alerts that you do not have enough Primogems if you do not have enough</li>
-   <li>v. Test that the Sign Out button brings you back to the Login Page</li>
+<h3>Profile page:</h3>
+   <li>Test that the back arrow in the top left brings you back to the Homepage</li>
+   <li>Check that a primo count has been created under inspect -> application as email+primo | 0  </li>
+   <li>Test that the 1st button alerts that the Primogems have been converted if you have enough (There is a code in profile.js line 9 to add 450 Primogems)</li>
+   <li>Test that the 1st button alerts that you do not have enough Primogems if you do not have enough</li>
+   <li>Test that the Sign Out button brings you back to the Login Page</li>
 
-<ul>Character Trivia page:</ul>
-   <li>i. You should see a 30 second timer, a question, 4 options and a help button (There are 5 tries a day, it might be easier testing with your own database so you can reset the tries)</li>
-   <li>ii. Check that under inspect -> application there is the email+question number | 0,0 (You can check the question number in character_trivia.js line 7)(It is the position of the question so the first question for the first character is 00)</li>
-   <li>iii. Test that a alert pops up saying that time is up when the countdown ends, this is counted as a wrong answer</li>
-   <li>iv. Test that a alert pops up saying that the answer is wrong when a wrong answer is clicked</li>
-   <li>v. Test that the help button brings you to the Ask Help Page and that the Ok button brings you back to the Character Trivia Page, this counts as a try for today</li>
-   <li>vi. Test that the help button no longer works in the same day</li>
-   <li>vii. Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo), the question in inspect -> application changes from email+question number | 0,0 to email+question number | 1,1</li>
-   <li>viii. Test that when 5 tries are up it returns you to the Homepage</li>
-   <li>ix. Test that it no longer lets you in on the same day</li>
+<h3>Character Trivia page:</h3>
+   <li>You should see a 30 second timer, a question, 4 options and a help button (There are 5 tries a day, it might be easier testing with your own database so you can reset the tries)</li>
+   <li>Check that under inspect -> application there is the email+question number | 0,0 (You can check the question number in character_trivia.js line 7)(It is the position of the question so the first question for the first character is 00)</li>
+   <li>Test that a alert pops up saying that time is up when the countdown ends, this is counted as a wrong answer</li>
+   <li>Test that a alert pops up saying that the answer is wrong when a wrong answer is clicked</li>
+   <li>Test that the help button brings you to the Ask Help Page and that the Ok button brings you back to the Character Trivia Page, this counts as a try for today</li>
+   <li>Test that the help button no longer works in the same day</li>
+   <li>Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo), the question in inspect -> application changes from email+question number | 0,0 to email+question number | 1,1</li>
+   <li>Test that when 5 tries are up it returns you to the Homepage</li>
+   <li>Test that it no longer lets you in on the same day</li>
 
-Harder parts to test:
+<h4>Harder parts to test:</h4>
 
    <li>Test that if a question is answered correctly for the second time, an alert would appear saying you have answered this question before and get 2 Primogems, and the question in inspect -> application changes from email+question number | 1,1 to email+question number | 1,2 and the primonum in inspect -> application increaes by 2</li>
    <li>Test that if a question is answered on the day after the quiz is started, that question counts as the 1st try of the next day</li>
    <li>Test that if the help button is used for the last question of the day it sends you to the homepage and no longer lets you in for the day</li>
 
-<ul>Genshin Trivia page:</ul>
-   <li>i. You should see a HP bar with 4 HP, a randomized character and a hilichurl, a 30 second timer, a question and 4 options(There are 5 tries a day, it might be easier testing with your own database so you can reset the tries)</li>
-   <li>ii. Test that a alert pops up saying that time is up when the countdown ends, this is counted as a wrong answer</li>
-   <li>iii. Test that a alert pops up saying that the answer is wrong when a wrong answer is clicked</li>
-   <li>iv. Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo)</li>
+<h3>Genshin Trivia page:</h3>
+   <li>You should see a HP bar with 4 HP, a randomized character and a hilichurl, a 30 second timer, a question and 4 options(There are 5 tries a day, it might be easier testing with your own database so you can reset the tries)</li>
+   <li>Test that a alert pops up saying that time is up when the countdown ends, this is counted as a wrong answer</li>
+   <li>Test that a alert pops up saying that the answer is wrong when a wrong answer is clicked</li>
+   <li>Test that if a correct answer is picked (The correct answers are the 1st one in the list in character_trivia.js: e.g. What is Venti's element?(Anemo(Hydro(Dendro(Voido -> the correct answer is Anemo)</li>
 
-   <li>iv. Test that the help button brings you to the Ask Help Page and that the Ok button brings you back to the Character Trivia Page, this counts as a try for today</li>
-   <li>v. Test that the help button no longer works in the same day</li>
-   <li>viii. Test that when 5 tries are up it returns you to the Homepage</li>
-   <li>ix. Test that it no longer lets you in on the same day</li>
+   <li>Test that the help button brings you to the Ask Help Page and that the Ok button brings you back to the Character Trivia Page, this counts as a try for today</li>
+   <li>Test that the help button no longer works in the same day</li>
+   <li>Test that when 5 tries are up it returns you to the Homepage</li>
+   <li>Test that it no longer lets you in on the same day</li>
 
-Harder parts to test:
+<h4>Harder parts to test:</h4>
 
    <li>Test that if a question is answered correctly for the second time, an alert would appear saying you have answered this question before and get 2 Primogems, and the question in inspect -> application changes from email+question number | 1,1 to email+question number | 1,2 and the primonum in inspect -> application increaes by 2</li>
    <li>Test that if a question is answered on the day after the quiz is started, that question counts as the 1st try of the next day</li>
