@@ -38,7 +38,8 @@ const clicklogin = (event) => {
       );
       setTimeout(myURL, 3000);
       function myURL() {
-        window.location.href = "http://127.0.0.1:5500/homepage.html";
+        window.location.href =
+          /*"http://127.0.0.1:5500/homepage.html"*/ "https://bean-curd.github.io/IP_SleepDeprived/homepage.html";
       }
     } else {
       $("#msg") /*If the information is wrong*/
