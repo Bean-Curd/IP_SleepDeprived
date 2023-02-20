@@ -24,7 +24,7 @@ $.ajax(gettime).done(function (response) {
     /*Looks for the user's account*/
     if (response[i].email == username) {
       usernum = i; /*Gets the user's account position*/
-      if (response[i].numtrydone >= 4) {
+      if (response[i].numtrydone >= 5) {
         document.getElementById("MYaskhelpok").onclick = () => {
           alert("You have completed all your tries for today!");
           window.location.href = "http://127.0.0.1:5500/homepage.html";
